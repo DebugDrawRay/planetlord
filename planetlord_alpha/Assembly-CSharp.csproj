@@ -46,7 +46,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\playerActionsController.cs" />
+     <Compile Include="Assets\cameraController.cs" />
+     <Compile Include="Assets\droneMoveEngine.cs" />
+     <Compile Include="Assets\enemyProperties.cs" />
+     <Compile Include="Assets\playerController.cs" />
+     <Compile Include="Assets\projectileController.cs" />
+     <Compile Include="Assets\projectileProperties.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
