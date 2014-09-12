@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\playerActionsController.cs">
+    <Files>
+      <File FileName="..\planetlord\main\Assets\Scripts\Player Controllers\actionsEngine.cs" Line="32" Column="3" />
+      <File FileName="..\planetlord\main\Assets\Scripts\Player Controllers\moveEngine.cs" Line="39" Column="3" />
+      <File FileName="Assets\playerActionsController.cs" Line="28" Column="39" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
