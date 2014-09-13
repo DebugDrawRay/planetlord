@@ -91,7 +91,6 @@ public class playerController : MonoBehaviour
 	//Movement Controls
 	void engineControl(float h, float v)
 	{
-		Debug.Log(rigidbody.velocity.magnitude);
 		rigidbody.drag = initialDrag * (rigidbody.velocity.magnitude * dragMultiplier);
 		rigidbody.AddForce (Vector3.forward * v * acceleration);
 		rigidbody.AddForce (Vector3.right * h * acceleration);
@@ -160,28 +159,41 @@ public class playerController : MonoBehaviour
 	}
 	//target tracking control
 	void targetTrackingController()
-	{}
+	{
+
+	}
 
 	//status control
 
 	void statusListener()
 	{
-		//weapon status
 		weaponFireDelay -= Time.deltaTime;
+
+		if (armorValue <= 0)
+		{
+			deathEvent();
+		}
 	}
 
 	void dealDamage(float damageValue)
 	{
 		armorValue -= damageValue;
 	}
+
+	void deathEvent()
+	{
+		Application.Quit();
+	}
+
 	//collision control
-	void onTriggerEnter(Collider other)
+	void OnTriggerEnter(Collider other)
 	{
 		foreach(string tag in damagedBy)
 		{
 			if(other.gameObject.tag == tag)
 			{
 				dealDamage(other.gameObject.GetComponent<projectileProperties>().baseDamage);
+				Destroy(other.gameObject);
 			}
 		}
 	}
