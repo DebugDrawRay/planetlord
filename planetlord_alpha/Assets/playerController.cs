@@ -29,6 +29,15 @@ public class playerController : MonoBehaviour
 	private float maxArmorValue;
 	public string[] damagedBy;
 
+	//tracking variables
+	public GameObject gameController;
+	public GameObject currentTrackedTarget;
+
+	public bool currentlyTrackingTarget;
+
+	public int currentTargetSelection;
+	public List<GameObject> trackableTargets;
+
 	void Awake()
 	{
 		//initialize values
@@ -37,6 +46,8 @@ public class playerController : MonoBehaviour
 		maxBoostFuel = boostFuel;
 		boostOverheat = false;
 		currentlySelectedWeapon = weaponsInv[0];
+		currentTargetSelection = -1;
+		currentlyTrackingTarget = false;
 	}
 
 	void Update()
@@ -44,6 +55,7 @@ public class playerController : MonoBehaviour
 		inputListener();
 		statusListener();
 		targetTrackingController();
+		boostRefuel();
 	}
 
 	//Handles all input from the player.
@@ -66,8 +78,6 @@ public class playerController : MonoBehaviour
 			boostControl(false);
 		}
 
-		boostRefuel();
-
 		if (Input.GetButtonDown("Brake"))
 		{
 			stopMovement();
@@ -85,6 +95,11 @@ public class playerController : MonoBehaviour
 		if(Input.GetButton("FireWeapon"))
 		{
 			fireWeapon();
+		}
+
+		if (Input.GetButtonDown("SwitchTarget"))
+		{
+			switchTarget();
 		}
 	}
 
@@ -160,7 +175,35 @@ public class playerController : MonoBehaviour
 	//target tracking control
 	void targetTrackingController()
 	{
+		trackableTargets = gameController.GetComponent<gameController>().trackableTargets;
 
+		if (trackableTargets.Count > 0)
+		{
+			if (currentTargetSelection == -1)
+			{
+				currentlyTrackingTarget = false;
+			}
+			else
+			{
+				currentTrackedTarget = trackableTargets[currentTargetSelection];
+				currentlyTrackingTarget = true;
+			}
+		}
+		else
+		{
+			currentlyTrackingTarget = false;
+			currentTargetSelection = -1;
+		}
+		
+		if (trackableTargets.Count - 1 < currentTargetSelection)
+		{
+			currentTargetSelection = -1;
+		}
+	}
+
+	void switchTarget()
+	{
+		currentTargetSelection += 1;
 	}
 
 	//status control

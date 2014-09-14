@@ -32,7 +32,7 @@ public class planetEnemiesController : MonoBehaviour
 
 		planetPos = transform.position;
 
-		childEnemies = new List<GameObject>();
+		childEnemies = GetComponent<planetProperties>().childEnemies;
 		spawnEnemies();
 	}
 

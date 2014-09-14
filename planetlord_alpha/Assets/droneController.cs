@@ -58,6 +58,8 @@ public class droneController: MonoBehaviour
 
 	void Update()
 	{
+		attackTarget = GetComponent<enemyProperties>().attackTarget;
+
 		stateController();
 		targetTracking();
 		lookAtTarget();

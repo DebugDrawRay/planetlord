@@ -46,6 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\armorSliderController.cs" />
+     <Compile Include="Assets\boostSliderController.cs" />
      <Compile Include="Assets\cameraController.cs" />
      <Compile Include="Assets\collisionEventController.cs" />
      <Compile Include="Assets\defaultPlanetController.cs" />
@@ -53,12 +55,15 @@
      <Compile Include="Assets\droneController.cs" />
      <Compile Include="Assets\enemyProperties.cs" />
      <Compile Include="Assets\gameController.cs" />
+     <Compile Include="Assets\miniMapPlayerController.cs" />
      <Compile Include="Assets\planetEnemiesController.cs" />
      <Compile Include="Assets\planetProperties.cs" />
      <Compile Include="Assets\playerController.cs" />
      <Compile Include="Assets\projectileController.cs" />
      <Compile Include="Assets\projectileProperties.cs" />
      <Compile Include="Assets\sunProperties.cs" />
+     <Compile Include="Assets\targetDirectionController.cs" />
+     <Compile Include="Assets\uiController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

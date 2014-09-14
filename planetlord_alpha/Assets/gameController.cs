@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class gameController : MonoBehaviour 
 {
@@ -7,6 +8,9 @@ public class gameController : MonoBehaviour
 
 	public GameObject[] availableSuns;
 	public GameObject[] availablePlanets;
+
+	public List<GameObject> solarSystemObjects;
+	public List<GameObject> trackableTargets;
 
 	public int maxPlanetsInSystem;
 	public int minPlanetsInSystem;
@@ -36,7 +40,9 @@ public class gameController : MonoBehaviour
 
 	void createSun()
 	{
-		Instantiate (availableSuns[Random.Range(0, availableSuns.Length)], sunPos, Quaternion.identity);
+		GameObject sun;
+		sun = Instantiate (availableSuns[Random.Range(0, availableSuns.Length)], sunPos, Quaternion.identity) as GameObject;
+		solarSystemObjects.Add(sun);
 		createPlanets();
 	}
 	
@@ -44,29 +50,33 @@ public class gameController : MonoBehaviour
 	{
 		for (int i = 0; i < Random.Range(minPlanetsInSystem, maxPlanetsInSystem); i++)
 		{
+			GameObject planet;
+
 			if (firstPlanetCreated == false)
 			{
 				firstPlanetCreated = true;
 				lastSpawnDistance = minDistanceFromSun;
-				Instantiate (availablePlanets[Random.Range(0, availablePlanets.Length)], objectPosition(lastSpawnDistance, maxPlanetSpacing, sunPos), Quaternion.identity);
-
+				planet = Instantiate (availablePlanets[Random.Range(0, availablePlanets.Length)], objectPosition(lastSpawnDistance, maxPlanetSpacing, sunPos), Quaternion.identity) as GameObject;
+				solarSystemObjects.Add(planet);
 			}
 			else
 			{
-				Instantiate (availablePlanets[Random.Range(0, availablePlanets.Length)], objectPosition(minPlanetSpacing, maxPlanetSpacing, sunPos), Quaternion.identity);
+				planet = Instantiate (availablePlanets[Random.Range(0, availablePlanets.Length)], objectPosition(lastSpawnDistance, maxPlanetSpacing, sunPos), Quaternion.identity) as GameObject;
+				solarSystemObjects.Add(planet);
 			}
 		}
 	}
 
+	//this works because reasons 
 	Vector3 objectPosition(float min, float max, Vector3 sunPos)
 	{
-		Vector3 pos = new Vector3(Random.Range(-(lastSpawnDistance + max),lastSpawnDistance + max),0,Random.Range(-(lastSpawnDistance + max),lastSpawnDistance + max));
+		Vector3 pos = new Vector3(Random.Range(-(min + max),min + max),0,Random.Range(-(min + max),min + max));
 		for (int i = 0; i < 1000; i++)
 		{
-			pos = new Vector3(Random.Range(-(lastSpawnDistance + max),lastSpawnDistance + max),0,Random.Range(-(lastSpawnDistance + max),lastSpawnDistance + max));
+			pos = new Vector3(Random.Range(-(min + max),min + max),0,Random.Range(-(min + max),min + max));
 			if (Vector3.Distance(sunPos, pos) >= lastSpawnDistance)
 			{
-				lastSpawnDistance = Vector3.Distance(sunPos, pos) + min;
+				lastSpawnDistance = Vector3.Distance(sunPos, pos) + minPlanetSpacing;
 				i = 1000;
 				return pos;
 			}
