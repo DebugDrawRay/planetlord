@@ -46,24 +46,26 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\armorSliderController.cs" />
-     <Compile Include="Assets\boostSliderController.cs" />
-     <Compile Include="Assets\cameraController.cs" />
-     <Compile Include="Assets\collisionEventController.cs" />
-     <Compile Include="Assets\defaultPlanetController.cs" />
-     <Compile Include="Assets\defaultSunController.cs" />
-     <Compile Include="Assets\droneController.cs" />
-     <Compile Include="Assets\enemyProperties.cs" />
-     <Compile Include="Assets\gameController.cs" />
-     <Compile Include="Assets\miniMapPlayerController.cs" />
-     <Compile Include="Assets\planetEnemiesController.cs" />
-     <Compile Include="Assets\planetProperties.cs" />
-     <Compile Include="Assets\playerController.cs" />
-     <Compile Include="Assets\projectileController.cs" />
-     <Compile Include="Assets\projectileProperties.cs" />
-     <Compile Include="Assets\sunProperties.cs" />
-     <Compile Include="Assets\targetDirectionController.cs" />
-     <Compile Include="Assets\uiController.cs" />
+     <Compile Include="Assets\Scripts\armorSliderController.cs" />
+     <Compile Include="Assets\Scripts\boostSliderController.cs" />
+     <Compile Include="Assets\Scripts\cameraController.cs" />
+     <Compile Include="Assets\Scripts\collisionEventController.cs" />
+     <Compile Include="Assets\Scripts\defaultPlanetController.cs" />
+     <Compile Include="Assets\Scripts\defaultSunController.cs" />
+     <Compile Include="Assets\Scripts\droneController.cs" />
+     <Compile Include="Assets\Scripts\enemyProperties.cs" />
+     <Compile Include="Assets\Scripts\gameController.cs" />
+     <Compile Include="Assets\Scripts\miniMapPlayerController.cs" />
+     <Compile Include="Assets\Scripts\planetEnemiesController.cs" />
+     <Compile Include="Assets\Scripts\planetProperties.cs" />
+     <Compile Include="Assets\Scripts\playerController.cs" />
+     <Compile Include="Assets\Scripts\projectileController.cs" />
+     <Compile Include="Assets\Scripts\projectileProperties.cs" />
+     <Compile Include="Assets\Scripts\sunProperties.cs" />
+     <Compile Include="Assets\Scripts\targetDirectionController.cs" />
+     <Compile Include="Assets\Scripts\uiController.cs" />
+     <Compile Include="Assets\pickupProperties.cs" />
+     <Compile Include="Assets\resourceIndicatorController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

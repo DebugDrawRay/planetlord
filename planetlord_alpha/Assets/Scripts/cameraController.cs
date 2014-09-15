@@ -12,6 +12,8 @@ public class cameraController : MonoBehaviour
 	public float maxCamFOV;
 	public float zoomSmooth;
 
+	private int idVal;
+
 	public string[] objectsToTrack;
 
 	private float yVal;
@@ -20,9 +22,7 @@ public class cameraController : MonoBehaviour
 
 	private Vector3 playerPos;
 
-	private List<GameObject> currentlyTracking;
-
-	private List<GameObject> trackableTargets;
+	public List<GameObject> currentlyTracking;
 
 	private GameObject objCurrentlyFocused;
 
@@ -30,15 +30,16 @@ public class cameraController : MonoBehaviour
 	{
 		yVal = transform.position.y;
 
-		trackableTargets = new List<GameObject>();
 		currentlyTracking = new List<GameObject>();
+
+		idVal = 0;
 	}
 
 	void Update () 
 	{
 		playerPos = playerShip.transform.position;
 
-		gameController.GetComponent<gameController>().trackableTargets = trackableTargets.Distinct().ToList();
+		gameController.GetComponent<gameController>().trackableTargets = currentlyTracking;
 
 		followPlayer();
 		cameraScalingController();
@@ -56,11 +57,14 @@ public class cameraController : MonoBehaviour
 
 	void distanceChecker(GameObject checkedObject)
 	{
-		float newDistance = Vector3.Distance(checkedObject.transform.position, playerPos);
-		float currentDistance = Vector3.Distance(objCurrentlyFocused.transform.position, playerPos);
-		if (newDistance > currentDistance)
+		if (objCurrentlyFocused != null)
 		{
-			objCurrentlyFocused = checkedObject;
+			float newDistance = Vector3.Distance(checkedObject.transform.position, playerPos);
+			float currentDistance = Vector3.Distance(objCurrentlyFocused.transform.position, playerPos);
+			if (newDistance > currentDistance)
+			{
+				objCurrentlyFocused = checkedObject;
+			}
 		}
 	}
 	
@@ -98,17 +102,21 @@ public class cameraController : MonoBehaviour
 		{
 			if (other.gameObject.tag == tag)
 			{
-				trackableTargets.Add(other.gameObject);
 
 				if (!currentlyTracking.Contains(other.gameObject))
 				{
 					if (currentlyTracking.Count == 0)
 					{
+						other.gameObject.GetComponent<enemyProperties>().id = idVal;
+						idVal ++;
 						currentlyTracking.Add(other.gameObject);
+
 						objCurrentlyFocused = other.gameObject;
 					}
 					else
 					{
+						other.gameObject.GetComponent<enemyProperties>().id = idVal;
+						idVal ++;
 						currentlyTracking.Add(other.gameObject);
 					}
 				}
@@ -123,7 +131,10 @@ public class cameraController : MonoBehaviour
 			if (other.gameObject.tag == tag)
 			{
 				distanceChecker(other.gameObject);
-				focusedObjDistance = Vector3.Distance(objCurrentlyFocused.transform.position, playerPos);
+				if (objCurrentlyFocused != null)
+				{
+					focusedObjDistance = Vector3.Distance(objCurrentlyFocused.transform.position, playerPos);
+				}
 			}
 		}
 	}

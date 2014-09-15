@@ -87,4 +87,17 @@ public class gameController : MonoBehaviour
 		}
 		return pos;
 	}
+
+	public void pauseGame(bool isPaused)
+	{
+		if (isPaused)
+		{
+			Time.timeScale = 0;
+		}
+
+		if (!isPaused)
+		{
+			Time.timeScale = 1;
+		}
+	}
 }

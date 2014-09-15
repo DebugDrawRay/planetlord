@@ -8,16 +8,28 @@ public class uiController : MonoBehaviour
 
 	public string sunTag;
 
+	public bool planetButtonActive;
+	public bool planetMenuActive;
+	public bool isInteractingWithPlanet;
+
 	public GameObject planetImage;
 	public GameObject sunImage;
 	public GameObject miniMapContainer;
 	public GameObject gameController;
+	public GameObject planetInteractionButton;
+	public GameObject planetInteractionMenu;
 	public List<GameObject> solarSystemObjects;
 
 	void Start()
 	{
 		solarSystemObjects = gameController.GetComponent<gameController>().solarSystemObjects;
 		miniMapGeneration();
+		isInteractingWithPlanet = false;
+	}
+
+	void Update()
+	{
+		planetInteractionController();
 	}
 
 	void miniMapGeneration()
@@ -48,4 +60,15 @@ public class uiController : MonoBehaviour
 		}
 	}
 
+	void planetInteractionController()
+	{
+		planetInteractionButton.SetActive(planetButtonActive);
+		planetInteractionMenu.SetActive(planetMenuActive);
+		gameController.GetComponent<gameController>().pauseGame(isInteractingWithPlanet);
+	}
+
+	public void interactingSwitch()
+	{
+		isInteractingWithPlanet = !isInteractingWithPlanet;
+	}
 }

@@ -12,6 +12,12 @@ public class planetProperties : MonoBehaviour
 
 	public float floatOffset;
 
+	public string playerShip;
+
+	public string inGameUI;
+
+	public GameObject planetInteractionMenu;
+
 	public GameObject[] availableEnemyTypes;
 
 	public List<GameObject> childEnemies;

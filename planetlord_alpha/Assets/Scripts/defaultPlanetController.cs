@@ -6,12 +6,18 @@ public class defaultPlanetController : MonoBehaviour
 {
 	private List<GameObject> childEnemies;
 	private bool isCaptured;
+	private string playerShip;
+	private string inGameUI;
+	private GameObject planetInteractionMenu;
 
 	void Awake()
 	{
 		isCaptured = false;
 		childEnemies = GetComponent<planetProperties>().childEnemies;
 		transform.position += new Vector3 (0, GetComponent<planetProperties>().floatOffset, 0);
+		playerShip = GetComponent<planetProperties>().playerShip;
+		planetInteractionMenu = GetComponent<planetProperties>().planetInteractionMenu;
+		inGameUI = GetComponent<planetProperties>().inGameUI;
 	}
 
 	void Update()
@@ -44,6 +50,20 @@ public class defaultPlanetController : MonoBehaviour
 		{
 			GetComponentInChildren<MeshRenderer>().renderer.material.color = Color.green;
 			isCaptured = true;
+		}
+	}
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.tag == playerShip && isCaptured)
+		{
+			GameObject.FindGameObjectWithTag(inGameUI).GetComponent<uiController>().planetButtonActive = true;
+		}
+	}
+	void OnTriggerExit(Collider other)
+	{
+		if (other.gameObject.tag == playerShip && isCaptured)
+		{
+			GameObject.FindGameObjectWithTag(inGameUI).GetComponent<uiController>().planetButtonActive = false;
 		}
 	}
 }

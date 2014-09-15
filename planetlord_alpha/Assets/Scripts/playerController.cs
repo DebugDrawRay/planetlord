@@ -26,8 +26,12 @@ public class playerController : MonoBehaviour
 
 	//status variables
 	public float armorValue;
+	public float resourcesCollected;
+
 	private float maxArmorValue;
 	public string[] damagedBy;
+	public string pickUps;
+
 
 	//tracking variables
 	public GameObject gameController;
@@ -195,15 +199,22 @@ public class playerController : MonoBehaviour
 			currentTargetSelection = -1;
 		}
 		
-		if (trackableTargets.Count - 1 < currentTargetSelection)
-		{
-			currentTargetSelection = -1;
-		}
+//		if (currentTargetSelection > trackableTargets.Count - 1)
+//		{
+//			currentTargetSelection = -1;
+//		}
 	}
 
 	void switchTarget()
 	{
-		currentTargetSelection += 1;
+		if (currentTargetSelection + 1 <= trackableTargets.Count -1)
+		{
+			currentTargetSelection += 1;
+		}
+		else
+		{
+			currentTargetSelection = -1;
+		}
 	}
 
 	//status control
@@ -238,6 +249,12 @@ public class playerController : MonoBehaviour
 				dealDamage(other.gameObject.GetComponent<projectileProperties>().baseDamage);
 				Destroy(other.gameObject);
 			}
+		}
+
+		if (other.gameObject.tag == pickUps)
+		{
+			resourcesCollected += other.gameObject.GetComponent<pickupProperties>().resourceAmount;
+			Destroy(other.gameObject);
 		}
 	}
 
