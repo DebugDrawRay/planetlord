@@ -8,7 +8,6 @@ public class defaultPlanetController : MonoBehaviour
 	private bool isCaptured;
 	private string playerShip;
 	private string inGameUI;
-	private GameObject planetInteractionMenu;
 
 	void Awake()
 	{
@@ -16,7 +15,6 @@ public class defaultPlanetController : MonoBehaviour
 		childEnemies = GetComponent<planetProperties>().childEnemies;
 		transform.position += new Vector3 (0, GetComponent<planetProperties>().floatOffset, 0);
 		playerShip = GetComponent<planetProperties>().playerShip;
-		planetInteractionMenu = GetComponent<planetProperties>().planetInteractionMenu;
 		inGameUI = GetComponent<planetProperties>().inGameUI;
 	}
 
@@ -57,6 +55,7 @@ public class defaultPlanetController : MonoBehaviour
 		if (other.gameObject.tag == playerShip && isCaptured)
 		{
 			GameObject.FindGameObjectWithTag(inGameUI).GetComponent<uiController>().planetButtonActive = true;
+			GameObject.FindGameObjectWithTag(inGameUI).GetComponent<uiController>().planetToInteract = this.gameObject;
 		}
 	}
 	void OnTriggerExit(Collider other)

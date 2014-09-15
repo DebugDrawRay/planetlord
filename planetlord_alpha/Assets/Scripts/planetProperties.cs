@@ -16,9 +16,8 @@ public class planetProperties : MonoBehaviour
 
 	public string inGameUI;
 
-	public GameObject planetInteractionMenu;
-
 	public GameObject[] availableEnemyTypes;
+	public GameObject[] planetInventory;
 
 	public List<GameObject> childEnemies;
 

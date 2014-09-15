@@ -11,6 +11,7 @@ public class uiController : MonoBehaviour
 	public bool planetButtonActive;
 	public bool planetMenuActive;
 	public bool isInteractingWithPlanet;
+	public GameObject planetToInteract;
 
 	public GameObject planetImage;
 	public GameObject sunImage;
@@ -63,12 +64,14 @@ public class uiController : MonoBehaviour
 	void planetInteractionController()
 	{
 		planetInteractionButton.SetActive(planetButtonActive);
-		planetInteractionMenu.SetActive(planetMenuActive);
-		gameController.GetComponent<gameController>().pauseGame(isInteractingWithPlanet);
 	}
 
-	public void interactingSwitch()
+	public void createPlanetMenu()
 	{
-		isInteractingWithPlanet = !isInteractingWithPlanet;
-	}
+		gameController.GetComponent<gameController>().pauseGame(true);
+		planetButtonActive = false;
+		GameObject menu;
+		menu = Instantiate(planetInteractionMenu, Vector3.zero, Quaternion.identity) as GameObject;
+		menu.GetComponent<planetInteractionMenuController>().planetInventory = planetToInteract.GetComponent<planetProperties>().planetInventory;
+	}	
 }

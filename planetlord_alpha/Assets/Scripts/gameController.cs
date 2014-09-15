@@ -21,6 +21,8 @@ public class gameController : MonoBehaviour
 
 	public float lastSpawnDistance;
 
+	public bool globalPause;
+
 	private Vector3 sunPos;
 
 	private bool firstPlanetCreated;
@@ -93,11 +95,13 @@ public class gameController : MonoBehaviour
 		if (isPaused)
 		{
 			Time.timeScale = 0;
+			globalPause = true;
 		}
 
 		if (!isPaused)
 		{
 			Time.timeScale = 1;
+			globalPause = false;
 		}
 	}
 }
