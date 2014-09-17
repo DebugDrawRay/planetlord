@@ -9,18 +9,23 @@ public class playerController : MonoBehaviour
 	public float initialDrag;
 
 	private float initialAccel;
-	public float acceleration;
+	private float acceleration;
 
+	//thruster variables
 	public float boostFuel;
-	public float boostStrength;
-	public float boostRefuelRate;
-	public float fuelUseRate;
-	public float boostCoolingPoint;
+	private float boostStrength;
+	private float boostRefuelRate;
+	private float fuelUseRate;
+	private float boostCoolingPoint;
 	private float maxBoostFuel;
 	private bool boostOverheat;
 
-	//weapon variables
+	//inventory variables
 	public GameObject[] weaponsInv;
+	public GameObject engineEquipped;
+	public GameObject thrusterEquipped;
+	public GameObject armorEquipped;
+
 	private GameObject currentlySelectedWeapon;
 	private float weaponFireDelay;
 
@@ -45,11 +50,12 @@ public class playerController : MonoBehaviour
 	void Awake()
 	{
 		//initialize values
+		refreshEquipment();
+
 		rigidbody.drag = initialDrag;
-		initialAccel = acceleration;
-		maxBoostFuel = boostFuel;
+
 		boostOverheat = false;
-		currentlySelectedWeapon = weaponsInv[0];
+
 		currentTargetSelection = -1;
 		currentlyTrackingTarget = false;
 	}
@@ -173,7 +179,7 @@ public class playerController : MonoBehaviour
 		if (weaponFireDelay <= 0)
 		{
 			Instantiate(currentlySelectedWeapon, transform.position, transform.rotation);
-			weaponFireDelay = currentlySelectedWeapon.GetComponent<projectileProperties>().weaponFireDelay;
+			weaponFireDelay = currentlySelectedWeapon.GetComponent<equipmentProperties>().weaponFireDelay;
 		}
 	}
 	//target tracking control
@@ -229,6 +235,36 @@ public class playerController : MonoBehaviour
 		}
 	}
 
+	void refreshEquipment()
+	{
+		//engine
+		acceleration = engineEquipped.GetComponent<equipmentProperties>().acceleration;
+		initialAccel = acceleration;
+
+		//thruster
+		boostStrength = thrusterEquipped.GetComponent<equipmentProperties>().boostStrength;
+		boostFuel = thrusterEquipped.GetComponent<equipmentProperties>().boostFuel;
+		boostRefuelRate = thrusterEquipped.GetComponent<equipmentProperties>().boostRefuelRate;
+		fuelUseRate = thrusterEquipped.GetComponent<equipmentProperties>().fuelUseRate;
+		boostCoolingPoint = thrusterEquipped.GetComponent<equipmentProperties>().boostCoolingPoint;
+		maxBoostFuel = boostFuel;
+
+		//armor
+		if (armorValue == maxArmorValue)
+		{
+			armorValue = armorEquipped.GetComponent<equipmentProperties>().armorValue;
+			maxArmorValue = armorEquipped.GetComponent<equipmentProperties>().armorValue;
+		}
+		else
+		{
+			maxArmorValue = armorEquipped.GetComponent<equipmentProperties>().armorValue;
+		}
+
+		currentlySelectedWeapon = weaponsInv[0];
+
+
+	}
+
 	void dealDamage(float damageValue)
 	{
 		armorValue -= damageValue;
@@ -246,7 +282,7 @@ public class playerController : MonoBehaviour
 		{
 			if(other.gameObject.tag == tag)
 			{
-				dealDamage(other.gameObject.GetComponent<projectileProperties>().baseDamage);
+				dealDamage(other.gameObject.GetComponent<equipmentProperties>().baseDamage);
 				Destroy(other.gameObject);
 			}
 		}

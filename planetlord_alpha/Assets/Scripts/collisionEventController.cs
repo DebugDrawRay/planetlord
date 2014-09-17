@@ -24,7 +24,7 @@ public class collisionEventController : MonoBehaviour
 		{
 			if(other.gameObject.tag == tag)
 			{
-				dealDamage(other.gameObject.GetComponent<projectileProperties>().baseDamage);
+				dealDamage(other.gameObject.GetComponent<equipmentProperties>().baseDamage);
 				Destroy(other.gameObject);
 			}
 		}

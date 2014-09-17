@@ -29,10 +29,10 @@ public class planetInteractionMenuController : MonoBehaviour
 			itemListing = Instantiate(itemListingContainer) as GameObject;
 			itemListing.transform.SetParent(transform, false);
 			itemListing.transform.localPosition += new Vector3(0, itemPosition, 0);
-			itemListing.GetComponent<storeItemController>().itemIcon = item.GetComponent<projectileProperties>().icon;
-			itemListing.GetComponent<storeItemController>().itemDesc = item.GetComponent<projectileProperties>().description;
-			itemListing.GetComponent<storeItemController>().itemCost = item.GetComponent<projectileProperties>().cost;
-			itemListing.GetComponent<storeItemController>().itemName = item.GetComponent<projectileProperties>().name;
+			itemListing.GetComponent<storeItemController>().itemIcon = item.GetComponent<equipmentProperties>().icon;
+			itemListing.GetComponent<storeItemController>().itemDesc = item.GetComponent<equipmentProperties>().description;
+			itemListing.GetComponent<storeItemController>().itemCost = item.GetComponent<equipmentProperties>().cost;
+			itemListing.GetComponent<storeItemController>().itemName = item.GetComponent<equipmentProperties>().name;
 			itemListing.GetComponent<storeItemController>().item = item;
 		}
 	}

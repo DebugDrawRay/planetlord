@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\armorSliderController.cs" />
+     <Compile Include="Assets\Scripts\basicMachineGunController.cs" />
      <Compile Include="Assets\Scripts\boostSliderController.cs" />
      <Compile Include="Assets\Scripts\cameraController.cs" />
      <Compile Include="Assets\Scripts\collisionEventController.cs" />
@@ -54,6 +55,7 @@
      <Compile Include="Assets\Scripts\defaultSunController.cs" />
      <Compile Include="Assets\Scripts\droneController.cs" />
      <Compile Include="Assets\Scripts\enemyProperties.cs" />
+     <Compile Include="Assets\Scripts\equipmentProperties.cs" />
      <Compile Include="Assets\Scripts\gameController.cs" />
      <Compile Include="Assets\Scripts\miniMapPlayerController.cs" />
      <Compile Include="Assets\Scripts\pickupProperties.cs" />
@@ -61,12 +63,12 @@
      <Compile Include="Assets\Scripts\planetInteractionMenuController.cs" />
      <Compile Include="Assets\Scripts\planetProperties.cs" />
      <Compile Include="Assets\Scripts\playerController.cs" />
-     <Compile Include="Assets\Scripts\projectileController.cs" />
-     <Compile Include="Assets\Scripts\projectileProperties.cs" />
      <Compile Include="Assets\Scripts\resourceIndicatorController.cs" />
      <Compile Include="Assets\Scripts\sunProperties.cs" />
      <Compile Include="Assets\Scripts\targetDirectionController.cs" />
      <Compile Include="Assets\Scripts\uiController.cs" />
+     <Compile Include="Assets\flakCannonController.cs" />
+     <Compile Include="Assets\flakObjectController.cs" />
      <Compile Include="Assets\storeItemController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>

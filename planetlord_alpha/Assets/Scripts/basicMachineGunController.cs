@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class projectileController : MonoBehaviour 
+public class basicMachineGunController : MonoBehaviour 
 {
 	private float despawnTimer;
+
 	void Start () 
 	{
-		rigidbody.velocity = (transform.forward * GetComponent<projectileProperties>().baseSpeed);
-		despawnTimer = GetComponent<projectileProperties>().despawnTimer;
+		rigidbody.velocity = (transform.forward * GetComponent<equipmentProperties>().baseSpeed);
+		despawnTimer = GetComponent<equipmentProperties>().despawnTimer;
 	}
 
 	void Update () 

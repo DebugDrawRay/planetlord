@@ -46,7 +46,7 @@ public class droneController: MonoBehaviour
 		attackTarget = GetComponent<enemyProperties>().attackTarget;
 
 		equippedWeapon = GetComponent<enemyProperties>().equippedWeapon;
-		initialFireDelay = equippedWeapon.GetComponent<projectileProperties>().weaponFireDelay;
+		initialFireDelay = equippedWeapon.GetComponent<equipmentProperties>().weaponFireDelay;
 		currentFireDelay = initialFireDelay;
 
 		//initialize engines
