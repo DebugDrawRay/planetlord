@@ -20,9 +20,11 @@ public class equipmentProperties : MonoBehaviour
 
 	public float armorValue;
 
+	public string type;
 	public string name;
 	public string description;
 	public float cost;
 	public Sprite icon;
+
 	
 }

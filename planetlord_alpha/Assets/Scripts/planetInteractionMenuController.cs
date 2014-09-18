@@ -33,6 +33,7 @@ public class planetInteractionMenuController : MonoBehaviour
 			itemListing.GetComponent<storeItemController>().itemDesc = item.GetComponent<equipmentProperties>().description;
 			itemListing.GetComponent<storeItemController>().itemCost = item.GetComponent<equipmentProperties>().cost;
 			itemListing.GetComponent<storeItemController>().itemName = item.GetComponent<equipmentProperties>().name;
+			itemListing.GetComponent<storeItemController>().itemType = item.GetComponent<equipmentProperties>().type;
 			itemListing.GetComponent<storeItemController>().item = item;
 		}
 	}

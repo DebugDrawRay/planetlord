@@ -168,7 +168,7 @@ public class playerController : MonoBehaviour
 
 	void weaponSelect(int selection)
 	{
-		if (selection <= weaponsInv.Length)
+		if (weaponsInv[selection] != null)
 		{
 			currentlySelectedWeapon = weaponsInv[selection];
 		}
@@ -235,7 +235,7 @@ public class playerController : MonoBehaviour
 		}
 	}
 
-	void refreshEquipment()
+	public void refreshEquipment()
 	{
 		//engine
 		acceleration = engineEquipped.GetComponent<equipmentProperties>().acceleration;

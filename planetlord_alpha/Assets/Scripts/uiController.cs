@@ -70,6 +70,7 @@ public class uiController : MonoBehaviour
 	{
 		gameController.GetComponent<gameController>().pauseGame(true);
 		planetButtonActive = false;
+
 		GameObject menu;
 		menu = Instantiate(planetInteractionMenu) as GameObject;
 		menu.GetComponent<planetInteractionMenuController>().planetInventory = planetToInteract.GetComponent<planetProperties>().planetInventory;

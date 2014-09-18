@@ -13,9 +13,9 @@ public class flakCannonController : MonoBehaviour
 		{
 			GameObject projectile;
 			float fireRot;
-			fireRot = ((GetComponent<equipmentProperties>().fireCone / GetComponent<equipmentProperties>().projectilesInShot) * i);
-			projectile = Instantiate(flakObject,Vector3.zero, Quaternion.identity) as GameObject;
-			projectile.transform.eulerAngles = new Vector3 (0, fireRot, 0);
+			fireRot = ((GetComponent<equipmentProperties>().fireCone / GetComponent<equipmentProperties>().projectilesInShot) * i) - ((GetComponent<equipmentProperties>().fireCone / GetComponent<equipmentProperties>().projectilesInShot)) - (GetComponent<equipmentProperties>().fireCone / 2);
+			projectile = Instantiate(flakObject, transform.position, transform.rotation) as GameObject;
+			projectile.transform.eulerAngles += new Vector3 (0, fireRot, 0);
 			projectile.rigidbody.velocity = (projectile.transform.forward * GetComponent<equipmentProperties>().baseSpeed);
 			projectile.GetComponent<flakObjectController>().despawnTimer = GetComponent<equipmentProperties>().despawnTimer;
 		}

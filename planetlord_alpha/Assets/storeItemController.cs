@@ -8,6 +8,7 @@ public class storeItemController : MonoBehaviour
 	public string itemName;
 	public string itemDesc;
 	public float itemCost;
+	public string itemType;
 	public GameObject item;
 
 	public GameObject itemIconContainer;
@@ -27,9 +28,34 @@ public class storeItemController : MonoBehaviour
 	{
 		if (itemCost <= GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().resourcesCollected)
 		{
-			GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().weaponsInv[1] = item;
-			GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().resourcesCollected -= itemCost;
-			Destroy(this.gameObject);
+			if (itemType == "Weapon")
+			{
+				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().weaponsInv[1] = item;
+				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().resourcesCollected -= itemCost;
+				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().refreshEquipment();
+				Destroy(this.gameObject);
+			}
+			if (itemType == "Armor")
+			{
+				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().armorEquipped = item;
+				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().resourcesCollected -= itemCost;
+				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().refreshEquipment();
+				Destroy(this.gameObject);
+			}
+			if (itemType == "Engine")
+			{
+				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().engineEquipped = item;
+				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().resourcesCollected -= itemCost;
+				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().refreshEquipment();
+				Destroy(this.gameObject);
+			}
+			if (itemType == "Thruster")
+			{
+				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().thrusterEquipped = item;
+				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().resourcesCollected -= itemCost;
+				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().refreshEquipment();
+				Destroy(this.gameObject);
+			}
 		}
 	}
 }
