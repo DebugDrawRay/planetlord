@@ -33,6 +33,18 @@ public class gameController : MonoBehaviour
 		solarSystemGenerationController();
 	}
 
+	void Update()
+	{
+		lockCursor();
+	}
+
+	void lockCursor()
+	{
+		Rect screenRect = new Rect(0,0, Screen.width, Screen.height);
+		if (!screenRect.Contains(Input.mousePosition))
+			return;
+	}
+
 	//generate the solar system
 
 	void solarSystemGenerationController()

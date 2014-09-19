@@ -18,6 +18,7 @@ public class flakCannonController : MonoBehaviour
 			projectile.transform.eulerAngles += new Vector3 (0, fireRot, 0);
 			projectile.rigidbody.velocity = (projectile.transform.forward * GetComponent<equipmentProperties>().baseSpeed);
 			projectile.GetComponent<flakObjectController>().despawnTimer = GetComponent<equipmentProperties>().despawnTimer;
+			projectile.GetComponent<equipmentProperties>().baseDamage = GetComponent<equipmentProperties>().baseDamage;
 		}
 	}
 	
