@@ -108,6 +108,10 @@ public class gameController : MonoBehaviour
 		{
 			Time.timeScale = 0;
 			globalPause = true;
+			foreach (GameObject obj in GameObject.FindGameObjectsWithTag("PlayerProjectile"))
+			{
+				Destroy(obj);
+			}
 		}
 
 		if (!isPaused)

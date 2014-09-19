@@ -12,7 +12,7 @@ Platform assembly: C:\Users\superintendent\Documents\planetlord\planetlord_alpha
 Loading C:\Users\superintendent\Documents\planetlord\planetlord_alpha\test_builds\planetlord_test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\superintendent\Documents\planetlord\planetlord_alpha\test_builds\planetlord_test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\superintendent\Documents\planetlord\planetlord_alpha\test_builds\planetlord_test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.049 seconds
+- Completed reload, in  0.033 seconds
 desktop: 1920x1080 60Hz; virtual: 3840x1208 at -1920,0
 <RI> Initializing input.
 <RI> Input initialized.

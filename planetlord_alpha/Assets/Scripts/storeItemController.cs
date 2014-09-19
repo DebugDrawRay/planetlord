@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class storeItemController : MonoBehaviour 
 {
@@ -10,6 +11,7 @@ public class storeItemController : MonoBehaviour
 	public float itemCost;
 	public string itemType;
 	public GameObject item;
+	public GameObject itemSource;
 
 	public GameObject itemIconContainer;
 	public GameObject itemNameContainer;
@@ -34,6 +36,7 @@ public class storeItemController : MonoBehaviour
 				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().resourcesCollected -= itemCost;
 				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().refreshEquipment();
 				Destroy(this.gameObject);
+				itemSource.GetComponent<planetProperties>().planetInventory.Remove(item);
 			}
 			if (itemType == "Armor")
 			{
@@ -41,6 +44,7 @@ public class storeItemController : MonoBehaviour
 				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().resourcesCollected -= itemCost;
 				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().refreshEquipment();
 				Destroy(this.gameObject);
+				itemSource.GetComponent<planetProperties>().planetInventory.Remove(item);
 			}
 			if (itemType == "Engine")
 			{
@@ -48,6 +52,7 @@ public class storeItemController : MonoBehaviour
 				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().resourcesCollected -= itemCost;
 				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().refreshEquipment();
 				Destroy(this.gameObject);
+				itemSource.GetComponent<planetProperties>().planetInventory.Remove(item);
 			}
 			if (itemType == "Thruster")
 			{
@@ -55,6 +60,7 @@ public class storeItemController : MonoBehaviour
 				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().resourcesCollected -= itemCost;
 				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().refreshEquipment();
 				Destroy(this.gameObject);
+				itemSource.GetComponent<planetProperties>().planetInventory.Remove(item);
 			}
 		}
 	}

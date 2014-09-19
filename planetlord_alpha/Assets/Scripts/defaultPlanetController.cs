@@ -8,14 +8,17 @@ public class defaultPlanetController : MonoBehaviour
 	private bool isCaptured;
 	private string playerShip;
 	private string inGameUI;
+	private string gameController;
 
 	void Awake()
 	{
 		isCaptured = false;
 		childEnemies = GetComponent<planetProperties>().childEnemies;
+		gameController = GetComponent<planetProperties>().gameController;
 		transform.position += new Vector3 (0, GetComponent<planetProperties>().floatOffset, 0);
 		playerShip = GetComponent<planetProperties>().playerShip;
 		inGameUI = GetComponent<planetProperties>().inGameUI;
+		fillInventory();
 	}
 
 	void Update()
@@ -36,7 +39,7 @@ public class defaultPlanetController : MonoBehaviour
 	{
 		for(int i = 0; i <= childEnemies.Count - 1; i++)
 		{
-			if(childEnemies[i].GetComponent<enemyProperties>().isDead || childEnemies[i] == null)
+			if(childEnemies[i] == null)
 			{
 				GetComponent<planetProperties>().childEnemies.RemoveAt(i);
 			}
@@ -46,7 +49,7 @@ public class defaultPlanetController : MonoBehaviour
 	{
 		if (childEnemies.Count <= 0)
 		{
-			GetComponentInChildren<MeshRenderer>().renderer.material.color = Color.green;
+			GetComponentInChildren<MeshRenderer>().renderer.material.color = Color.blue;
 			isCaptured = true;
 		}
 	}
@@ -64,5 +67,34 @@ public class defaultPlanetController : MonoBehaviour
 		{
 			GameObject.FindGameObjectWithTag(inGameUI).GetComponent<uiController>().planetButtonActive = false;
 		}
+	}
+	void fillInventory()
+	{
+		for(int i = 0; i <= GetComponent<planetProperties>().planetInventory.Count - 1; i++)
+		{
+			GetComponent<planetProperties>().planetInventory[i] = itemSelection();
+		}
+	}
+	GameObject itemSelection()
+	{
+		int selection = Random.Range(0, GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary.Length);
+		int subSelection =  Random.Range(0, GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary[selection].Length);
+
+		for (int i = 1000; i < 1000; i++)
+		{
+			selection = Random.Range(0, GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary.Length);
+			subSelection =  Random.Range(0, GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary[selection].Length);
+			if (GetComponent<planetProperties>().planetInventory.Contains(GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary[selection][subSelection]))
+			{
+				continue;
+			}
+			else
+			{
+				return GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary[selection][subSelection];
+				i  = 1000;
+			}
+		}
+
+		return GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary[selection][subSelection];
 	}
 }

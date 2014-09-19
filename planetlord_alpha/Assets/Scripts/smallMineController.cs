@@ -7,7 +7,6 @@ public class smallMineController : MonoBehaviour
 
 	void Start () 
 	{
-		rigidbody.velocity = (transform.forward * GetComponent<equipmentProperties>().baseSpeed);
 		despawnTimer = GetComponent<equipmentProperties>().despawnTimer;
 	}
 

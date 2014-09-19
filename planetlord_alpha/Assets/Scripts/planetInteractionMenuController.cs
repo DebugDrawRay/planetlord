@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class planetInteractionMenuController : MonoBehaviour 
 {
-	public GameObject[] planetInventory;
+	public List<GameObject> planetInventory;
+
+	public GameObject planetToInteract;
 
 	public GameObject itemListingContainer;
 
@@ -35,6 +38,7 @@ public class planetInteractionMenuController : MonoBehaviour
 			itemListing.GetComponent<storeItemController>().itemName = item.GetComponent<equipmentProperties>().name;
 			itemListing.GetComponent<storeItemController>().itemType = item.GetComponent<equipmentProperties>().type;
 			itemListing.GetComponent<storeItemController>().item = item;
+			itemListing.GetComponent<storeItemController>().itemSource = planetToInteract;
 		}
 	}
 	public void endInteraction()

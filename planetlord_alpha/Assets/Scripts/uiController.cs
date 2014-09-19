@@ -74,5 +74,6 @@ public class uiController : MonoBehaviour
 		GameObject menu;
 		menu = Instantiate(planetInteractionMenu) as GameObject;
 		menu.GetComponent<planetInteractionMenuController>().planetInventory = planetToInteract.GetComponent<planetProperties>().planetInventory;
+		menu.GetComponent<planetInteractionMenuController>().planetToInteract = planetToInteract;
 	}	
 }

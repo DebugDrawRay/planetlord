@@ -5,10 +5,15 @@ public class equipmentProperties : MonoBehaviour
 {
 	public float baseDamage;
 	public float baseSpeed;
+
 	public float despawnTimer;
 	public float weaponFireDelay;
+
 	public float projectilesInShot;
 	public float fireCone;
+
+	public float maxBeamLength;
+	public float beamLengthIncrease;
 
 	public float acceleration;
 	
