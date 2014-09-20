@@ -21,7 +21,7 @@ public class playerController : MonoBehaviour
 	private bool boostOverheat;
 
 	public float subLightStrength;
-	private bool subLightDrive;
+	public bool subLightDrive;
 
 	//inventory variables
 	public GameObject[] weaponsInv;

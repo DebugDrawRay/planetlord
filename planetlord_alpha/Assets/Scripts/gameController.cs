@@ -20,7 +20,7 @@ public class gameController : MonoBehaviour
 	public float minDistanceFromSun;
 
 	public float lastSpawnDistance;
-
+	
 	public bool globalPause;
 
 	private Vector3 sunPos;
@@ -29,6 +29,8 @@ public class gameController : MonoBehaviour
 
 	void Awake()
 	{
+		//Screen.showCursor = false;
+
 		sunPos = Vector3.zero;
 		solarSystemGenerationController();
 	}
