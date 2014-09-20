@@ -10,7 +10,7 @@ public class defaultPlanetController : MonoBehaviour
 	private string inGameUI;
 	private string gameController;
 
-	void Awake()
+	void Start()
 	{
 		isCaptured = false;
 		childEnemies = GetComponent<planetProperties>().childEnemies;

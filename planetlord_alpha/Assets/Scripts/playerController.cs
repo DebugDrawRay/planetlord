@@ -20,6 +20,9 @@ public class playerController : MonoBehaviour
 	private float maxBoostFuel;
 	private bool boostOverheat;
 
+	public float subLightStrength;
+	private bool subLightDrive;
+
 	//inventory variables
 	public GameObject[] weaponsInv;
 	public GameObject engineEquipped;
@@ -36,7 +39,7 @@ public class playerController : MonoBehaviour
 	private float maxArmorValue;
 	public string[] damagedBy;
 	public string pickUps;
-
+	public string gravWell;
 
 	//tracking variables
 	public GameObject gameController;
@@ -55,6 +58,8 @@ public class playerController : MonoBehaviour
 		rigidbody.drag = initialDrag;
 
 		boostOverheat = false;
+
+		subLightDrive = true;
 
 		currentTargetSelection = -1;
 		currentlyTrackingTarget = false;
@@ -80,11 +85,19 @@ public class playerController : MonoBehaviour
 
 		if (Input.GetButton("Boost"))
 		{
-			boostControl(true);
+			if (subLightDrive)
+			{
+				subLightControl(true);
+			}
+			else
+			{
+				boostControl(true);
+			}
 		}
 
 		if (Input.GetButtonUp("Boost"))
 		{
+			subLightControl(false);
 			boostControl(false);
 		}
 
@@ -131,6 +144,18 @@ public class playerController : MonoBehaviour
 		else if(boostFuel <= 0)
 		{
 			acceleration = initialAccel;
+		}
+		else if(!isActive)
+		{
+			acceleration = initialAccel;
+		}
+	}
+
+	void subLightControl(bool isActive)
+	{
+		if (isActive)
+		{
+			acceleration = initialAccel * subLightStrength;
 		}
 		else if(!isActive)
 		{
@@ -292,6 +317,19 @@ public class playerController : MonoBehaviour
 			resourcesCollected += other.gameObject.GetComponent<pickupProperties>().resourceAmount;
 			Destroy(other.gameObject);
 		}
+
+		if (other.gameObject.tag == gravWell)
+		{
+			subLightDrive = false;
+			subLightControl(false);
+		}
 	}
 
+	void OnTriggerExit(Collider other)
+	{
+		if (other.gameObject.tag == gravWell)
+		{
+			subLightDrive = true;
+		}
+	}
 }
