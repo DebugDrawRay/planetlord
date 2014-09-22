@@ -25,7 +25,7 @@ public class cameraController : MonoBehaviour
 
 	public List<GameObject> currentlyTracking;
 
-	private GameObject objCurrentlyFocused;
+
 
 	void Awake()
 	{
@@ -139,7 +139,6 @@ public class cameraController : MonoBehaviour
 						idVal ++;
 						currentlyTracking.Add(other.gameObject);
 
-						objCurrentlyFocused = other.gameObject;
 					}
 					else
 					{

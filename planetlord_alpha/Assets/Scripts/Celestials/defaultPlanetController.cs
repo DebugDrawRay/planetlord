@@ -90,8 +90,8 @@ public class defaultPlanetController : MonoBehaviour
 			}
 			else
 			{
-				return GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary[selection][subSelection];
 				i  = 1000;
+				return GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary[selection][subSelection];
 			}
 		}
 
