@@ -5,7 +5,8 @@ public class machineGunTurret : MonoBehaviour
 {
 	private GameObject ammoType;
 	private float activeRange;
-	private float rotationAngle;
+	private float minRotAngle;
+	private float maxRotAngle;
 	private float initialFireDelay;
 	private float currentFireDelay;
 	private string targetTag;
@@ -15,7 +16,8 @@ public class machineGunTurret : MonoBehaviour
 	{
 		ammoType = GetComponent<turretProperties>().ammoType;
 		activeRange = GetComponent<turretProperties>().activeRange;
-		rotationAngle = GetComponent<turretProperties>().rotationAngle;
+		minRotAngle = GetComponent<turretProperties>().minRotAngle;
+		maxRotAngle = GetComponent<turretProperties>().maxRotAngle;
 		targetTag = GetComponent<turretProperties>().targetTag;
 		initialFireDelay = ammoType.GetComponent<equipmentProperties>().weaponFireDelay;
 		currentFireDelay = initialFireDelay;
@@ -25,18 +27,37 @@ public class machineGunTurret : MonoBehaviour
 	{
 		currentFireDelay -= Time.deltaTime;
 
-		float angle;
-		angle = Vector3.Angle(GameObject.FindGameObjectWithTag(targetTag).transform.position - transform.position, GetComponentInChildren<Transform>().position);
-
-		if(angle < rotationAngle/2)
+		if (GameObject.FindGameObjectWithTag(targetTag).transform.position.x > transform.position.x )
 		{
-			transform.LookAt(new Vector3(GameObject.FindGameObjectWithTag(targetTag).transform.position.x, 0, GameObject.FindGameObjectWithTag(targetTag).transform.position.z));
-
-			if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag(targetTag).transform.position) <= activeRange)
+			float angle;
+			angle = Vector3.Angle(GameObject.FindGameObjectWithTag(targetTag).transform.position - GetComponentInChildren<Transform>().position, GetComponentInChildren<Transform>().position);
+			Debug.Log (angle);
+			if(angle > minRotAngle && angle < maxRotAngle)
 			{
-				fireWeapon();
+				transform.LookAt(new Vector3(GameObject.FindGameObjectWithTag(targetTag).transform.position.x, 0, GameObject.FindGameObjectWithTag(targetTag).transform.position.z));
+				
+				if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag(targetTag).transform.position) <= activeRange)
+				{
+					fireWeapon();
+				}
 			}
 		}
+		else
+		{
+			float angle;
+			angle = 360 - Vector3.Angle(GameObject.FindGameObjectWithTag(targetTag).transform.position - GetComponentInChildren<Transform>().position, GetComponentInChildren<Transform>().position);
+			Debug.Log (angle);
+			if(angle > minRotAngle && angle < maxRotAngle)
+			{
+				transform.LookAt(new Vector3(GameObject.FindGameObjectWithTag(targetTag).transform.position.x, 0, GameObject.FindGameObjectWithTag(targetTag).transform.position.z));
+				
+				if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag(targetTag).transform.position) <= activeRange)
+				{
+					fireWeapon();
+				}
+			}
+		}
+
 	}
 
 	void fireWeapon()

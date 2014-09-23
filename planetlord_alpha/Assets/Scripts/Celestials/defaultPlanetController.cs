@@ -45,6 +45,7 @@ public class defaultPlanetController : MonoBehaviour
 			}
 		}
 	}
+
 	void checkPlanetCapture()
 	{
 		if (childEnemies.Count <= 0)
@@ -53,6 +54,7 @@ public class defaultPlanetController : MonoBehaviour
 			isCaptured = true;
 		}
 	}
+
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.tag == playerShip && isCaptured)
@@ -61,6 +63,7 @@ public class defaultPlanetController : MonoBehaviour
 			GameObject.FindGameObjectWithTag(inGameUI).GetComponent<uiController>().planetToInteract = this.gameObject;
 		}
 	}
+
 	void OnTriggerExit(Collider other)
 	{
 		if (other.gameObject.tag == playerShip && isCaptured)
@@ -68,6 +71,7 @@ public class defaultPlanetController : MonoBehaviour
 			GameObject.FindGameObjectWithTag(inGameUI).GetComponent<uiController>().planetButtonActive = false;
 		}
 	}
+
 	void fillInventory()
 	{
 		for(int i = 0; i <= GetComponent<planetProperties>().planetInventory.Count - 1; i++)
@@ -75,6 +79,7 @@ public class defaultPlanetController : MonoBehaviour
 			GetComponent<planetProperties>().planetInventory[i] = itemSelection();
 		}
 	}
+
 	GameObject itemSelection()
 	{
 		int selection = Random.Range(0, GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary.Length);
