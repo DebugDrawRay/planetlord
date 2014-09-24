@@ -27,36 +27,43 @@ public class machineGunTurret : MonoBehaviour
 	{
 		currentFireDelay -= Time.deltaTime;
 
-		if (GameObject.FindGameObjectWithTag(targetTag).transform.position.x > transform.position.x )
+		if (GameObject.FindGameObjectWithTag(targetTag).transform.position.x > transform.position.x && minRotAngle != 270 && maxRotAngle != 90 )
+		{
+			float angle;
+			angle = Vector3.Angle(GameObject.FindGameObjectWithTag(targetTag).transform.position - GetComponentInChildren<Transform>().position, GetComponentInChildren<Transform>().position);
+
+			if(angle > minRotAngle && angle < maxRotAngle)
+			{
+				transform.LookAt(new Vector3(GameObject.FindGameObjectWithTag(targetTag).transform.position.x, 0, GameObject.FindGameObjectWithTag(targetTag).transform.position.z));
+			}
+		}
+		else if(minRotAngle == 270 && maxRotAngle == 90)
 		{
 			float angle;
 			angle = Vector3.Angle(GameObject.FindGameObjectWithTag(targetTag).transform.position - GetComponentInChildren<Transform>().position, GetComponentInChildren<Transform>().position);
 			Debug.Log (angle);
-			if(angle > minRotAngle && angle < maxRotAngle)
+
+			if(angle <= 90)
 			{
 				transform.LookAt(new Vector3(GameObject.FindGameObjectWithTag(targetTag).transform.position.x, 0, GameObject.FindGameObjectWithTag(targetTag).transform.position.z));
-				
-				if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag(targetTag).transform.position) <= activeRange)
-				{
-					fireWeapon();
-				}
 			}
 		}
 		else
 		{
 			float angle;
 			angle = 360 - Vector3.Angle(GameObject.FindGameObjectWithTag(targetTag).transform.position - GetComponentInChildren<Transform>().position, GetComponentInChildren<Transform>().position);
-			Debug.Log (angle);
+
 			if(angle > minRotAngle && angle < maxRotAngle)
 			{
 				transform.LookAt(new Vector3(GameObject.FindGameObjectWithTag(targetTag).transform.position.x, 0, GameObject.FindGameObjectWithTag(targetTag).transform.position.z));
-				
-				if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag(targetTag).transform.position) <= activeRange)
-				{
-					fireWeapon();
-				}
 			}
 		}
+
+		if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag(targetTag).transform.position) <= activeRange)
+		{
+			fireWeapon();
+		}
+
 
 	}
 
