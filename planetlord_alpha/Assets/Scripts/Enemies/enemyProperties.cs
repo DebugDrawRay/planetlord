@@ -26,6 +26,8 @@ public class enemyProperties : MonoBehaviour
 
 	public GameObject attackTarget;
 	public GameObject equippedWeapon;
+	public GameObject parentObject;
+
 
 	void Update()
 	{

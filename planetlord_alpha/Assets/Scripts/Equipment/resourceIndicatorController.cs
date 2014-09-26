@@ -8,6 +8,6 @@ public class resourceIndicatorController : MonoBehaviour
 
 	void Update () 
 	{
-		GetComponent<Text>().text = GameObject.FindGameObjectWithTag(playerShip).GetComponent<playerController>().resourcesCollected + " Resources"; 		
+		GetComponent<Text>().text = GameObject.FindGameObjectWithTag(playerShip).GetComponent<playerController>().resourcesCollected + ""; 		
 	}
 }

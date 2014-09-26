@@ -130,21 +130,42 @@ public class cameraController : MonoBehaviour
 		{
 			if (other.gameObject.tag == tag)
 			{
-
-				if (!currentlyTracking.Contains(other.gameObject))
+				if (tag == "Enemy")
 				{
-					if (currentlyTracking.Count == 0)
+					if (!currentlyTracking.Contains(other.gameObject))
 					{
-						other.gameObject.GetComponent<enemyProperties>().id = idVal;
-						idVal ++;
-						currentlyTracking.Add(other.gameObject);
+						if (currentlyTracking.Count == 0)
+						{
+							other.gameObject.GetComponent<enemyProperties>().id = idVal;
+							idVal ++;
+							currentlyTracking.Add(other.gameObject);
 
+						}
+						else
+						{
+							other.gameObject.GetComponent<enemyProperties>().id = idVal;
+							idVal ++;
+							currentlyTracking.Add(other.gameObject);
+						}
 					}
-					else
+				}
+				if (tag == "EnemyCarrier")
+				{
+					if (!currentlyTracking.Contains(other.gameObject))
 					{
-						other.gameObject.GetComponent<enemyProperties>().id = idVal;
-						idVal ++;
-						currentlyTracking.Add(other.gameObject);
+						if (currentlyTracking.Count == 0)
+						{
+							other.gameObject.GetComponent<carrierProperties>().id = idVal;
+							idVal ++;
+							currentlyTracking.Add(other.gameObject);
+							
+						}
+						else
+						{
+							other.gameObject.GetComponent<carrierProperties>().id = idVal;
+							idVal ++;
+							currentlyTracking.Add(other.gameObject);
+						}
 					}
 				}
 			}

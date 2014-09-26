@@ -8,6 +8,6 @@ public class sublightIndicatorController : MonoBehaviour
 	
 	void Update () 
 	{
-		GetComponent<Text>().enabled = GameObject.FindGameObjectWithTag(playerShip).GetComponent<playerController>().subLightDrive;
+		GetComponent<Image>().enabled = GameObject.FindGameObjectWithTag(playerShip).GetComponent<playerController>().subLightDrive;
 	}
 }

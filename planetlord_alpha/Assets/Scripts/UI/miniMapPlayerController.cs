@@ -17,6 +17,6 @@ public class miniMapPlayerController : MonoBehaviour
 	void Update () 
 	{
 		playerPos = GameObject.FindWithTag(playerShip).GetComponent<Transform>().position;
-		transform.localPosition = new Vector3(playerPos.x / miniMapRelDistance, playerPos.z / miniMapRelDistance, depth);
+		transform.localPosition = new Vector3((playerPos.x / miniMapRelDistance) * -1, (playerPos.z / miniMapRelDistance) * -1, depth);
 	}
 }

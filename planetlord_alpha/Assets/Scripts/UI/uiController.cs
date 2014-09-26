@@ -7,6 +7,7 @@ public class uiController : MonoBehaviour
 	public float miniMapRelDistance;
 
 	public string sunTag;
+	public string playerTag;
 
 	public bool planetButtonActive;
 	public bool planetMenuActive;
@@ -31,6 +32,12 @@ public class uiController : MonoBehaviour
 	void Update()
 	{
 		planetInteractionController();
+		playerListener();
+	}
+
+	void playerListener()
+	{
+		miniMapContainer.SetActive(GameObject.FindGameObjectWithTag(playerTag).GetComponent<playerController>().toggleMap);
 	}
 
 	void miniMapGeneration()

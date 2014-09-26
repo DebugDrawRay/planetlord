@@ -4,6 +4,10 @@ using System.Collections.Generic;
 
 public class playerController : MonoBehaviour 
 {
+	// ui control variables
+	public bool toggleMap;
+	public bool currentlyTrackingTarget;
+
 	//engine variables
 	public float dragMultiplier;
 	public float initialDrag;
@@ -45,8 +49,6 @@ public class playerController : MonoBehaviour
 	public string gameController;
 	public GameObject currentTrackedTarget;
 
-	public bool currentlyTrackingTarget;
-
 	public int currentTargetSelection;
 	public List<GameObject> trackableTargets;
 
@@ -65,6 +67,8 @@ public class playerController : MonoBehaviour
 
 		currentTargetSelection = -1;
 		currentlyTrackingTarget = false;
+
+		toggleMap = false;
 	}
 
 	void Update()
@@ -128,6 +132,11 @@ public class playerController : MonoBehaviour
 		if (Input.GetButtonDown("SwitchTarget"))
 		{
 			switchTarget();
+		}
+
+		if (Input.GetButtonDown("ToggleMap"))
+		{
+			toggleMap = !toggleMap;
 		}
 	}
 
@@ -235,10 +244,10 @@ public class playerController : MonoBehaviour
 			currentTargetSelection = -1;
 		}
 		
-//		if (currentTargetSelection > trackableTargets.Count - 1)
-//		{
-//			currentTargetSelection = -1;
-//		}
+		if (currentTargetSelection > trackableTargets.Count - 1)
+		{
+			currentTargetSelection = -1;
+		}
 	}
 
 	void switchTarget()
