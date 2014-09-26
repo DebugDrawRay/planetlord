@@ -19,6 +19,7 @@ public class enemyProperties : MonoBehaviour
 	public float correctionBoostMulti;
 
 	public string[] damagedBy;
+	public string[] repelledBy;
 
 	public GameObject[] itemsDropped;
 

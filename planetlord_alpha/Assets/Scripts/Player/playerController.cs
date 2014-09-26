@@ -32,6 +32,7 @@ public class playerController : MonoBehaviour
 	public GameObject engineEquipped;
 	public GameObject thrusterEquipped;
 	public GameObject armorEquipped;
+	public GameObject shieldEquipped;
 
 	private GameObject currentlySelectedWeapon;
 	private float weaponFireDelay;
@@ -39,8 +40,11 @@ public class playerController : MonoBehaviour
 	//status variables
 	public float armorValue;
 	public float resourcesCollected;
+	public float shieldValue;
 
+	private float maxShieldValue;
 	private float maxArmorValue;
+	private GameObject currentlyEquippedShield;
 	public string[] damagedBy;
 	public string pickUps;
 	public string gravWell;
@@ -59,6 +63,10 @@ public class playerController : MonoBehaviour
 		//initialize values
 		armorValue = armorEquipped.GetComponent<equipmentProperties>().armorValue;
 		maxArmorValue = armorEquipped.GetComponent<equipmentProperties>().armorValue;
+
+		shieldValue = shieldEquipped.GetComponent<equipmentProperties>().shieldValue;
+		maxShieldValue = armorEquipped.GetComponent<equipmentProperties>().shieldValue;
+
 		refreshEquipment();
 
 		rigidbody.drag = initialDrag;
@@ -274,6 +282,15 @@ public class playerController : MonoBehaviour
 		{
 			deathEvent();
 		}
+
+		if (shieldValue <= 0)
+		{
+			currentlyEquippedShield.SetActive(false);
+		}
+		else
+		{
+			currentlyEquippedShield.SetActive(true);
+		}
 	}
 
 	public void refreshEquipment()
@@ -301,6 +318,21 @@ public class playerController : MonoBehaviour
 			maxArmorValue = armorEquipped.GetComponent<equipmentProperties>().armorValue;
 		}
 
+		//shield
+		if (shieldValue == maxShieldValue)
+		{
+			shieldValue = shieldEquipped.GetComponent<equipmentProperties>().shieldValue;
+			maxShieldValue = armorEquipped.GetComponent<equipmentProperties>().shieldValue;
+			currentlyEquippedShield = Instantiate(shieldEquipped, transform.position, Quaternion.identity) as GameObject;
+			currentlyEquippedShield.transform.parent = transform;
+		}
+		else
+		{
+			maxShieldValue = armorEquipped.GetComponent<equipmentProperties>().shieldValue;
+			currentlyEquippedShield = Instantiate(shieldEquipped, transform.position, Quaternion.identity) as GameObject;
+			currentlyEquippedShield.transform.parent = transform;
+		}
+
 		currentlySelectedWeapon = weaponsInv[0];
 
 
@@ -308,7 +340,14 @@ public class playerController : MonoBehaviour
 
 	void dealDamage(float damageValue)
 	{
-		armorValue -= damageValue;
+		if (shieldValue <=0)
+		{
+			armorValue -= damageValue;
+		}
+		else
+		{
+			shieldValue -= damageValue;
+		}
 	}
 
 	void deathEvent()

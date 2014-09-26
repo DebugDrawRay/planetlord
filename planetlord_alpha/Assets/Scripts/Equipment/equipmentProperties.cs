@@ -7,6 +7,9 @@ public class equipmentProperties : MonoBehaviour
 	public float baseSpeed;
 	private float initialBaseSpeed;
 
+	public float shieldValue;
+	public string[] shieldBlocks;
+
 	public float despawnTimer;
 	public float weaponFireDelay;
 
