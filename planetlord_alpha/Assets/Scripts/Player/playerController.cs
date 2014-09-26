@@ -57,6 +57,8 @@ public class playerController : MonoBehaviour
 	void Awake()
 	{
 		//initialize values
+		armorValue = armorEquipped.GetComponent<equipmentProperties>().armorValue;
+		maxArmorValue = armorEquipped.GetComponent<equipmentProperties>().armorValue;
 		refreshEquipment();
 
 		rigidbody.drag = initialDrag;

@@ -41,7 +41,6 @@ public class machineGunTurret : MonoBehaviour
 		{
 			float angle;
 			angle = Vector3.Angle(GameObject.FindGameObjectWithTag(targetTag).transform.position - GetComponentInChildren<Transform>().position, GetComponentInChildren<Transform>().position);
-			Debug.Log (angle);
 
 			if(angle <= 90)
 			{

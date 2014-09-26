@@ -1,29 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Equipment/resourceIndicatorController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\gunshipCarrierController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Game Controller/cameraController.cs" Line="152" Column="15" />
-      <File FileName="Assets/Scripts/Celestials/defaultPlanetController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Equipment/equipmentProperties.cs" Line="1" Column="1" />
-      <File FileName="Assets/turretProperties.cs" Line="1" Column="1" />
-      <File FileName="Assets/machineGunTurret.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player/playerController.cs" Line="71" Column="21" />
-      <File FileName="Assets/Scripts/Equipment/basicMachineGunController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Enemies/enemyProperties.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Enemies/droneController.cs" Line="1" Column="1" />
-      <File FileName="Assets/visionController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player/targetDirectionController.cs" Line="1" Column="1" />
-      <File FileName="Assets/gunshipCarrierController.cs" Line="1" Column="1" />
-      <File FileName="Assets/carrierEnemySpawnController.cs" Line="1" Column="1" />
-      <File FileName="Assets/carrierProperties.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Celestials/planetProperties.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Celestials/enemySpawnController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/UI/armorMeterController.cs" Line="15" Column="139" />
-      <File FileName="Assets/Scripts/UI/boostMeterController.cs" Line="19" Column="43" />
-      <File FileName="Assets/Scripts/Player/sublightIndicatorController.cs" Line="11" Column="21" />
-      <File FileName="Assets/Scripts/UI/miniMapPlayerController.cs" Line="20" Column="121" />
-      <File FileName="Assets/Scripts/UI/uiController.cs" Line="40" Column="1" />
-      <File FileName="Assets/Scripts/Equipment/resourceIndicatorController.cs" Line="11" Column="132" />
+      <File FileName="Assets\Scripts\UI\armorMeterController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\playerController.cs" Line="352" Column="1" />
+      <File FileName="Assets\Scripts\Game Controller\cameraController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\boostMeterController.cs" Line="20" Column="45" />
+      <File FileName="Assets\shieldMeterController.cs" Line="3" Column="22" />
+      <File FileName="Assets\Scripts\Player\sublightIndicatorController.cs" Line="15" Column="1" />
+      <File FileName="Assets\Scripts\UI\miniMapPlayerController.cs" Line="22" Column="134" />
+      <File FileName="Assets\machineGunTurret.cs" Line="43" Column="183" />
+      <File FileName="Assets\gunshipCarrierController.cs" Line="94" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
