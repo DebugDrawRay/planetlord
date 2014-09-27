@@ -3,10 +3,13 @@ using System.Collections;
 
 public class targetingRetController : MonoBehaviour 
 {
+	private Vector3 mousePos;
 	void Update () 
 	{
 		GetComponent<SpriteRenderer>().enabled = GameObject.FindGameObjectWithTag("GameController").GetComponent<gameController>().targetingCur;
-		transform.position = new Vector3 (Camera.main.ScreenToWorldPoint(Input.mousePosition).x, 20, Camera.main.ScreenToWorldPoint(Input.mousePosition).z);
-		//transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+		mousePos =  Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		transform.position = new Vector3(mousePos.x, 0, mousePos.z);
+
 	}
 }

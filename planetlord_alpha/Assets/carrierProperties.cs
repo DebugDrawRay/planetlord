@@ -62,7 +62,7 @@ public class carrierProperties : MonoBehaviour {
 	{
 		for (int i = 0; i <= GameObject.FindGameObjectWithTag("GameController").GetComponent<gameController>().trackableTargets.Count -1; i++)
 		{
-			if (GameObject.FindGameObjectWithTag("GameController").GetComponent<gameController>().trackableTargets[i].GetComponent<enemyProperties>().id == id)
+			if (GameObject.FindGameObjectWithTag("GameController").GetComponent<gameController>().trackableTargets[i].GetComponent<carrierProperties>().id == id)
 			{
 				GameObject.FindGameObjectWithTag("GameController").GetComponent<gameController>().trackableTargets.RemoveAt(i);
 			}

@@ -262,7 +262,7 @@ public class playerController : MonoBehaviour
 
 	void switchTarget()
 	{
-		if (currentTargetSelection + 1 <= trackableTargets.Count -1)
+		if (currentTargetSelection < trackableTargets.Count -1)
 		{
 			currentTargetSelection += 1;
 		}

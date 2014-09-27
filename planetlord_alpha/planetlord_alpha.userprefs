@@ -1,33 +1,24 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/gunshipCarrierController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\carrierProperties.cs">
     <Files>
-      <File FileName="Assets/Scripts/UI/miniMapPlayerController.cs" Line="23" Column="3" />
-      <File FileName="Assets/collisionReactionController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player/playerController.cs" Line="1" Column="1" />
-      <File FileName="Assets/gunshipCarrierController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/UI/armorMeterController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/UI/targetingRetController.cs" Line="9" Column="125" />
+      <File FileName="Assets\laserBeamController.cs" Line="25" Column="2" />
+      <File FileName="Assets\Scripts\Equipment\equipmentProperties.cs" Line="30" Column="26" />
+      <File FileName="Assets\Scripts\Equipment\basicMachineGunController.cs" Line="5" Column="1" />
+      <File FileName="Assets\Scripts\UI\targetingLaserController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\targetDirectionController.cs" Line="26" Column="1" />
+      <File FileName="Assets\gunshipCarrierController.cs" Line="1" Column="1" />
+      <File FileName="Assets\onHitObjController.cs" Line="1" Column="1" />
+      <File FileName="Assets\collisionReactionController.cs" Line="52" Column="61" />
+      <File FileName="Assets\Scripts\Player\playerController.cs" Line="248" Column="1" />
+      <File FileName="Assets\Scripts\Game Controller\cameraController.cs" Line="1" Column="1" />
+      <File FileName="Assets\basicMissileController.cs" Line="22" Column="174" />
+      <File FileName="Assets\carrierProperties.cs" Line="56" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="C:\Users\superintendent\Documents\planetlord\planetlord_alpha\Assets\planetProperties.cs" line="17" />
-      <Breakpoint file="C:\Users\superintendent\Documents\planetlord\planetlord_alpha\Assets\playerController.cs" line="109" />
-      <Breakpoint file="C:\Users\superintendent\Documents\planetlord\planetlord_alpha\Assets\Scripts\uiController.cs" line="70" />
-      <Breakpoint file="/Users/rgrice/planetlord/planetlord_alpha/Assets/storeItemController.cs" line="30" />
-      <Breakpoint file="/Users/rgrice/planetlord/planetlord_alpha/Assets/storeItemController.cs" line="28" />
-      <Breakpoint file="/Users/rgrice/planetlord/planetlord_alpha/Assets/storeItemController.cs" line="26" />
-      <Breakpoint file="/Users/rgrice/planetlord/planetlord_alpha/Assets/storeItemController.cs" line="31" />
-      <Breakpoint file="/Users/rgrice/planetlord/planetlord_alpha/Assets/storeItemController.cs" line="32" />
-      <Breakpoint file="C:\Users\superintendent\Documents\planetlord\planetlord_alpha\Assets\Scripts\defaultPlanetController.cs" line="83" />
-      <Breakpoint file="C:\Users\superintendent\Documents\planetlord\planetlord_alpha\Assets\Scripts\defaultPlanetController.cs" line="87" />
-      <Breakpoint file="C:\Users\superintendent\Documents\planetlord\planetlord_alpha\Assets\Scripts\defaultPlanetController.cs" line="89" />
-      <Breakpoint file="C:\Users\superintendent\Documents\planetlord\planetlord_alpha\Assets\Scripts\defaultPlanetController.cs" line="93" />
-      <Breakpoint file="C:\Users\superintendent\Documents\planetlord\planetlord_alpha\Assets\Scripts\defaultPlanetController.cs" line="94" />
-      <Breakpoint file="C:\Users\superintendent\Documents\planetlord\planetlord_alpha\Assets\Scripts\defaultPlanetController.cs" line="85" />
-      <Breakpoint file="C:\Users\superintendent\Documents\planetlord\planetlord_alpha\Assets\Scripts\defaultPlanetController.cs" line="86" />
-      <Breakpoint file="/Users/rgrice/planetlord/planetlord_alpha/Assets/turretProperties.cs" line="5" />
+      <Breakpoint file="C:\Users\superintendent\Documents\planetlord\planetlord_alpha\Assets\Scripts\Player\playerController.cs" line="248" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
