@@ -29,7 +29,7 @@ public class equipmentProperties : MonoBehaviour
 
 	public float armorValue;
 
-	public string equipmentOwner;
+	public GameObject equipmentOwner;
 	public string type;
 	public string name;
 	public string description;

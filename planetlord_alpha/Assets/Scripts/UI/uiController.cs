@@ -17,14 +17,14 @@ public class uiController : MonoBehaviour
 	public GameObject planetImage;
 	public GameObject sunImage;
 	public GameObject miniMapContainer;
-	public GameObject gameController;
+	public string gameController;
 	public GameObject planetInteractionButton;
 	public GameObject planetInteractionMenu;
 	public List<GameObject> solarSystemObjects;
 
 	void Start()
 	{
-		solarSystemObjects = gameController.GetComponent<gameController>().solarSystemObjects;
+		solarSystemObjects = GameObject.FindGameObjectWithTag(gameController).GetComponent<gameController>().solarSystemObjects;
 		miniMapGeneration();
 		isInteractingWithPlanet = false;
 	}
@@ -75,8 +75,8 @@ public class uiController : MonoBehaviour
 
 	public void createPlanetMenu()
 	{
-		gameController.GetComponent<gameController>().pauseGame(true);
-		gameController.GetComponent<gameController>().toggleCursor(false);
+		GameObject.FindGameObjectWithTag(gameController).GetComponent<gameController>().pauseGame(true);
+		GameObject.FindGameObjectWithTag(gameController).GetComponent<gameController>().toggleCursor(false);
 		planetButtonActive = false;
 
 		GameObject menu;

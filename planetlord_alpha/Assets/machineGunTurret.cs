@@ -70,8 +70,10 @@ public class machineGunTurret : MonoBehaviour
 	{
 		if (currentFireDelay <= 0) 
 		{
+			GameObject ammo;
+			ammo = Instantiate (ammoType, transform.position, transform.rotation) as GameObject;
+			ammo.GetComponent<equipmentProperties>().equipmentOwner = this.gameObject;
 			currentFireDelay = initialFireDelay;
-			Instantiate(ammoType, transform.position, transform.rotation);
 		}
 	}
 }

@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 public class cameraController : MonoBehaviour 
 {
-	public GameObject playerShip;
+	public string playerShip;
 
-	public GameObject gameController;
+	public string gameController;
 	
 	public float defaultCamFOV;
 	public float maxCamFOV;
@@ -38,9 +38,9 @@ public class cameraController : MonoBehaviour
 
 	void Update () 
 	{
-		playerPos = playerShip.transform.position;
+		playerPos = GameObject.FindGameObjectWithTag(playerShip).transform.position;
 
-		gameController.GetComponent<gameController>().trackableTargets = currentlyTracking;
+		GameObject.FindGameObjectWithTag(gameController).GetComponent<gameController>().trackableTargets = currentlyTracking;
 
 		followPlayer();
 		cameraScalingController();
@@ -48,7 +48,7 @@ public class cameraController : MonoBehaviour
 
 	void followPlayer()
 	{
-		transform.position = new Vector3(playerShip.transform.position.x, yVal, playerShip.transform.position.z);
+		transform.position = new Vector3(GameObject.FindGameObjectWithTag(playerShip).transform.position.x, yVal, GameObject.FindGameObjectWithTag(playerShip).transform.position.z);
 	}
 
 	void cameraScalingController()

@@ -4,7 +4,7 @@ using System.Collections;
 public class flakCannonController : MonoBehaviour 
 {
 	private float despawnTimer;
-	private string equipmentOwner;
+	private GameObject equipmentOwner;
 	public GameObject flakObject;
 	void Start () 
 	{
@@ -17,7 +17,7 @@ public class flakCannonController : MonoBehaviour
 			fireRot = ((GetComponent<equipmentProperties>().fireCone / GetComponent<equipmentProperties>().projectilesInShot) * i) - ((GetComponent<equipmentProperties>().fireCone / GetComponent<equipmentProperties>().projectilesInShot)) - (GetComponent<equipmentProperties>().fireCone / 2);
 			projectile = Instantiate(flakObject, transform.position, transform.rotation) as GameObject;
 			projectile.transform.eulerAngles += new Vector3 (0, fireRot, 0);
-			projectile.rigidbody.velocity = (projectile.transform.forward * GetComponent<equipmentProperties>().baseSpeed + GameObject.FindGameObjectWithTag(equipmentOwner).rigidbody.velocity);
+			projectile.rigidbody.velocity = (projectile.transform.forward * GetComponent<equipmentProperties>().baseSpeed + equipmentOwner.rigidbody.velocity);
 			projectile.GetComponent<flakObjectController>().despawnTimer = GetComponent<equipmentProperties>().despawnTimer;
 			projectile.GetComponent<equipmentProperties>().baseDamage = GetComponent<equipmentProperties>().baseDamage;
 		}

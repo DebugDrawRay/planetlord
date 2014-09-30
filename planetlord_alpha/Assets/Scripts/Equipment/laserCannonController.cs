@@ -7,7 +7,7 @@ public class laserCannonController : MonoBehaviour
 	private float maxBeamLength;
 	private float beamLengthIncrease;
 	private float despawnTimer;
-	private string equipmentOwner;
+	private GameObject equipmentOwner;
 
 	void Awake()
 	{
@@ -15,7 +15,7 @@ public class laserCannonController : MonoBehaviour
 		baseSpeed = GetComponent<equipmentProperties>().baseSpeed;
 		maxBeamLength = GetComponent<equipmentProperties>().maxBeamLength;
 		beamLengthIncrease = GetComponent<equipmentProperties>().beamLengthIncrease;
-		rigidbody.velocity = (transform.forward * (baseSpeed + GameObject.FindGameObjectWithTag(equipmentOwner).rigidbody.velocity.magnitude));
+		rigidbody.velocity = (transform.forward * (baseSpeed + equipmentOwner.rigidbody.velocity.magnitude));
 		despawnTimer = GetComponent<equipmentProperties>().despawnTimer;
 	}
 	void FixedUpdate()

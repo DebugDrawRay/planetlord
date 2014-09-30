@@ -4,10 +4,16 @@ using System.Collections.Generic;
 
 public class gameController : MonoBehaviour 
 {
+	//player systems generation
+	public GameObject playerShip;
+	public Vector3 playerSpawnPos;
+	public GameObject mainUI;
+
 	//solar system variables
 
 	public GameObject[] availableSuns;
 	public GameObject[] availablePlanets;
+	public GameObject spaceBackground;
 
 	public List<GameObject> solarSystemObjects;
 	public List<GameObject> trackableTargets;
@@ -31,10 +37,18 @@ public class gameController : MonoBehaviour
 	void Awake()
 	{
 		toggleCursor(true);
-		Screen.showCursor = false;
 
 		sunPos = Vector3.zero;
+
 		solarSystemGenerationController();
+		spawnPlayer();
+	}
+
+	//set up cursor and player
+	void spawnPlayer()
+	{
+		Instantiate (mainUI);
+		Instantiate (playerShip, playerSpawnPos, Quaternion.identity);
 	}
 
 	public void toggleCursor(bool active)
@@ -56,6 +70,7 @@ public class gameController : MonoBehaviour
 	void solarSystemGenerationController()
 	{
 		createSun();
+		Instantiate(spaceBackground, new Vector3(0, -200, 0), Quaternion.identity);
 	}
 
 	void createSun()

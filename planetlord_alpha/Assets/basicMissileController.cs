@@ -4,7 +4,7 @@ using System.Collections;
 public class basicMissileController : MonoBehaviour 
 {
 	private float despawnTimer;
-	private string equipmentOwner;
+	private GameObject equipmentOwner;
 	
 	void Start () 
 	{
@@ -15,11 +15,11 @@ public class basicMissileController : MonoBehaviour
 	
 	void Update () 
 	{
-		if (GameObject.FindGameObjectWithTag(equipmentOwner).GetComponent<playerController>().currentTrackedTarget != null)
+		if (equipmentOwner.GetComponent<playerController>().currentTrackedTarget != null)
 		{
-			transform.LookAt(GameObject.FindGameObjectWithTag(equipmentOwner).GetComponent<playerController>().currentTrackedTarget.transform.position);
+			transform.LookAt(equipmentOwner.GetComponent<playerController>().currentTrackedTarget.transform.position);
 		}
-		rigidbody.velocity = (transform.forward * (GetComponent<equipmentProperties>().baseSpeed + GameObject.FindGameObjectWithTag(equipmentOwner).rigidbody.velocity.magnitude));
+		rigidbody.velocity = (transform.forward * (GetComponent<equipmentProperties>().baseSpeed + equipmentOwner.rigidbody.velocity.magnitude));
 
 		despawnTimer -= Time.deltaTime;
 		if (despawnTimer <= 0)

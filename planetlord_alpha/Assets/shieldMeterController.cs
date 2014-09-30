@@ -7,7 +7,7 @@ public class shieldMeterController : MonoBehaviour
 	public float baseOpacity;
 	private float initialShield;
 
-	void Awake()
+	void Start()
 	{
 		initialShield = GameObject.FindGameObjectWithTag(playerShip).GetComponent<playerController>().shieldValue;
 	}

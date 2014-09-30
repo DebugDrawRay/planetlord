@@ -6,7 +6,7 @@ public class boostMeterController : MonoBehaviour
 {
 	public string playerShip;
 	private float initialFuel;
-	void Awake () 
+	void Start () 
 	{
 		initialFuel = GameObject.FindGameObjectWithTag(playerShip).GetComponent<playerController>().boostFuel;
 	}

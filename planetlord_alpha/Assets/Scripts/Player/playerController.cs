@@ -28,7 +28,7 @@ public class playerController : MonoBehaviour
 	public bool subLightDrive;
 
 	//inventory variables
-	public GameObject[] weaponsInv;
+	public GameObject weaponsInv;
 	public GameObject engineEquipped;
 	public GameObject thrusterEquipped;
 	public GameObject armorEquipped;
@@ -122,14 +122,14 @@ public class playerController : MonoBehaviour
 			stopMovement();
 		}
 
-		if (Input.GetButton("Weapon1"))
+		/*if (Input.GetButton("Weapon1"))
 		{
 			weaponSelect(0);
 		}
 		else if (Input.GetButton("Weapon2"))
 		{
 			weaponSelect(1);
-		}
+		}*/
 
 		if (!subLightDrive)
 		{
@@ -215,19 +215,21 @@ public class playerController : MonoBehaviour
 
 	//weapons control
 
-	void weaponSelect(int selection)
+	/*void weaponSelect(int selection)
 	{
 		if (weaponsInv[selection] != null)
 		{
 			currentlySelectedWeapon = weaponsInv[selection];
 		}
-	}
+	}*/
 
 	void fireWeapon()
 	{
 		if (weaponFireDelay <= 0)
 		{
-			Instantiate(currentlySelectedWeapon, transform.position, transform.rotation);
+			GameObject ammo;
+			ammo = Instantiate(currentlySelectedWeapon, transform.position, transform.rotation) as GameObject;
+			ammo.GetComponent<equipmentProperties>().equipmentOwner = this.gameObject;
 			weaponFireDelay = currentlySelectedWeapon.GetComponent<equipmentProperties>().weaponFireDelay;
 		}
 	}
@@ -333,7 +335,7 @@ public class playerController : MonoBehaviour
 			currentlyEquippedShield.transform.parent = transform;
 		}
 
-		currentlySelectedWeapon = weaponsInv[0];
+		currentlySelectedWeapon = weaponsInv;
 
 
 	}

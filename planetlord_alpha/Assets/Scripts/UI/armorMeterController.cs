@@ -7,7 +7,7 @@ public class armorMeterController : MonoBehaviour
 	public string playerShip;
 	public float baseOpacity;
 	private float initialArmor;
-	void Awake()
+	void Start()
 	{
 		initialArmor = GameObject.FindGameObjectWithTag(playerShip).GetComponent<playerController>().armorValue;
 	}

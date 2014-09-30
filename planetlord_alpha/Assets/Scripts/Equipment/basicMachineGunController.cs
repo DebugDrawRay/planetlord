@@ -4,12 +4,12 @@ using System.Collections;
 public class basicMachineGunController : MonoBehaviour 
 {
 	private float despawnTimer;
-	private string equipmentOwner;
+	private GameObject equipmentOwner;
 
 	void Start () 
 	{
 		equipmentOwner = GetComponent<equipmentProperties>().equipmentOwner;
-		rigidbody.velocity = (transform.forward * (GetComponent<equipmentProperties>().baseSpeed + GameObject.FindGameObjectWithTag(equipmentOwner).rigidbody.velocity.magnitude));
+		rigidbody.velocity = (transform.forward * (GetComponent<equipmentProperties>().baseSpeed + equipmentOwner.rigidbody.velocity.magnitude));
 		despawnTimer = GetComponent<equipmentProperties>().despawnTimer;
 	}
 

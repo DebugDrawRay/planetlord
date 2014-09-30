@@ -32,7 +32,7 @@ public class storeItemController : MonoBehaviour
 		{
 			if (itemType == "Weapon")
 			{
-				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().weaponsInv[1] = item;
+				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().weaponsInv = item;
 				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().resourcesCollected -= itemCost;
 				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().refreshEquipment();
 				Destroy(this.gameObject);

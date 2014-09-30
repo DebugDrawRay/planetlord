@@ -150,8 +150,10 @@ public class droneController: MonoBehaviour
 	{
 		if (currentFireDelay <= 0) 
 		{
+			GameObject ammo;
+			ammo = Instantiate (equippedWeapon, transform.position, transform.rotation) as GameObject;
+			ammo.GetComponent<equipmentProperties>().equipmentOwner = this.gameObject;
 			currentFireDelay = initialFireDelay;
-			Instantiate (equippedWeapon, transform.position, transform.rotation);
 		}
 	}
 
