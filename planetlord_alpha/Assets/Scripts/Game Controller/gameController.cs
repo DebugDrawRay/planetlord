@@ -70,7 +70,7 @@ public class gameController : MonoBehaviour
 	void solarSystemGenerationController()
 	{
 		createSun();
-		Instantiate(spaceBackground, new Vector3(0, -200, 0), Quaternion.identity);
+		Instantiate(spaceBackground, new Vector3(0, -1000, 0), Quaternion.identity);
 	}
 
 	void createSun()

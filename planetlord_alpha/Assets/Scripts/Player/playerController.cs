@@ -321,7 +321,7 @@ public class playerController : MonoBehaviour
 	{
 		//engine
 		GameObject engine;
-		engine = Instantiate(engineEquipped, transform.position, Quaternion.identity) as GameObject;
+		engine = Instantiate(engineEquipped, transform.position, transform.rotation) as GameObject;
 		engine.transform.parent = transform;
 		previouslyEquipped.Add(engine);
 
@@ -330,7 +330,7 @@ public class playerController : MonoBehaviour
 
 		//thruster
 		GameObject thruster;
-		thruster = Instantiate(thrusterEquipped, transform.position, Quaternion.identity) as GameObject;
+		thruster = Instantiate(thrusterEquipped, transform.position, transform.rotation) as GameObject;
 		thruster.transform.parent = transform;
 		previouslyEquipped.Add(thruster);
 
@@ -343,7 +343,7 @@ public class playerController : MonoBehaviour
 	
 		//armor
 		GameObject armor;
-		armor = Instantiate(armorEquipped, transform.position, Quaternion.identity) as GameObject;
+		armor = Instantiate(armorEquipped, transform.position, transform.rotation) as GameObject;
 		armor.transform.parent = transform;
 		previouslyEquipped.Add(armor);
 
@@ -412,7 +412,9 @@ public class playerController : MonoBehaviour
 			resourcesCollected += other.gameObject.GetComponent<pickupProperties>().resourceAmount;
 			Destroy(other.gameObject);
 		}
-
+	}
+	void OnTriggerStay(Collider other)
+	{
 		if (other.gameObject.tag == gravWell)
 		{
 			subLightDrive = false;
