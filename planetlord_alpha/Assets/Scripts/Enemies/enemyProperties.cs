@@ -49,9 +49,12 @@ public class enemyProperties : MonoBehaviour
 	{
 		for (int i = 0; i <= GameObject.FindGameObjectWithTag("GameController").GetComponent<gameController>().trackableTargets.Count -1; i++)
 		{
-			if (GameObject.FindGameObjectWithTag("GameController").GetComponent<gameController>().trackableTargets[i].GetComponent<enemyProperties>().id == id)
+			if (GameObject.FindGameObjectWithTag("GameController").GetComponent<gameController>().trackableTargets[i].gameObject.tag == "Enemy")
 			{
-				GameObject.FindGameObjectWithTag("GameController").GetComponent<gameController>().trackableTargets.RemoveAt(i);
+				if (GameObject.FindGameObjectWithTag("GameController").GetComponent<gameController>().trackableTargets[i].GetComponent<enemyProperties>().id == id)
+				{
+					GameObject.FindGameObjectWithTag("GameController").GetComponent<gameController>().trackableTargets.RemoveAt(i);
+				}
 			}
 		}
 		Destroy(this.gameObject);

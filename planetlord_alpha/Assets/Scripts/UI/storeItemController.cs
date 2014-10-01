@@ -18,7 +18,7 @@ public class storeItemController : MonoBehaviour
 	public GameObject itemDescContainer;
 	public GameObject itemCostContainer;
 
-	void Update()
+	void Start()
 	{
 		itemIconContainer.GetComponent<Image>().sprite = itemIcon;
 		itemNameContainer.GetComponent<Text>().text = itemName;
@@ -34,7 +34,7 @@ public class storeItemController : MonoBehaviour
 			{
 				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().weaponsInv = item;
 				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().resourcesCollected -= itemCost;
-				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().refreshEquipment();
+				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().updateEquipment();
 				Destroy(this.gameObject);
 				itemSource.GetComponent<planetProperties>().planetInventory.Remove(item);
 			}
@@ -42,7 +42,7 @@ public class storeItemController : MonoBehaviour
 			{
 				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().armorEquipped = item;
 				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().resourcesCollected -= itemCost;
-				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().refreshEquipment();
+				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().updateEquipment();
 				Destroy(this.gameObject);
 				itemSource.GetComponent<planetProperties>().planetInventory.Remove(item);
 			}
@@ -50,7 +50,7 @@ public class storeItemController : MonoBehaviour
 			{
 				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().engineEquipped = item;
 				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().resourcesCollected -= itemCost;
-				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().refreshEquipment();
+				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().updateEquipment();
 				Destroy(this.gameObject);
 				itemSource.GetComponent<planetProperties>().planetInventory.Remove(item);
 			}
@@ -58,7 +58,15 @@ public class storeItemController : MonoBehaviour
 			{
 				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().thrusterEquipped = item;
 				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().resourcesCollected -= itemCost;
-				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().refreshEquipment();
+				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().updateEquipment();
+				Destroy(this.gameObject);
+				itemSource.GetComponent<planetProperties>().planetInventory.Remove(item);
+			}
+			if (itemType == "Shield")
+			{
+				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().shieldEquipped = item;
+				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().resourcesCollected -= itemCost;
+				GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().updateEquipment();
 				Destroy(this.gameObject);
 				itemSource.GetComponent<planetProperties>().planetInventory.Remove(item);
 			}

@@ -37,6 +37,8 @@ public class playerController : MonoBehaviour
 	private GameObject currentlySelectedWeapon;
 	private float weaponFireDelay;
 
+	public List<GameObject> previouslyEquipped;
+
 	//status variables
 	public float armorValue;
 	public float resourcesCollected;
@@ -67,7 +69,7 @@ public class playerController : MonoBehaviour
 		shieldValue = shieldEquipped.GetComponent<equipmentProperties>().shieldValue;
 		maxShieldValue = armorEquipped.GetComponent<equipmentProperties>().shieldValue;
 
-		refreshEquipment();
+		previouslyEquipped = new List<GameObject>();
 
 		rigidbody.drag = initialDrag;
 
@@ -79,6 +81,10 @@ public class playerController : MonoBehaviour
 		currentlyTrackingTarget = false;
 
 		toggleMap = false;
+	}
+	void Start()
+	{
+		refreshEquipment();
 	}
 
 	void Update()
@@ -295,21 +301,52 @@ public class playerController : MonoBehaviour
 		}
 	}
 
-	public void refreshEquipment()
+	// handles equipment change and initialization
+
+	public void updateEquipment()
+	{
+		if (previouslyEquipped.Count > 0)
+		{
+			int count = previouslyEquipped.Count - 1;
+			for(int i = 0; i <= count; i++)
+			{
+				Destroy(previouslyEquipped[0]);
+				previouslyEquipped.RemoveAt(0);
+			}
+			refreshEquipment();
+		}
+	}
+
+	void refreshEquipment()
 	{
 		//engine
+		GameObject engine;
+		engine = Instantiate(engineEquipped, transform.position, Quaternion.identity) as GameObject;
+		engine.transform.parent = transform;
+		previouslyEquipped.Add(engine);
+
 		acceleration = engineEquipped.GetComponent<equipmentProperties>().acceleration;
 		initialAccel = acceleration;
 
 		//thruster
+		GameObject thruster;
+		thruster = Instantiate(thrusterEquipped, transform.position, Quaternion.identity) as GameObject;
+		thruster.transform.parent = transform;
+		previouslyEquipped.Add(thruster);
+
 		boostStrength = thrusterEquipped.GetComponent<equipmentProperties>().boostStrength;
 		boostFuel = thrusterEquipped.GetComponent<equipmentProperties>().boostFuel;
 		boostRefuelRate = thrusterEquipped.GetComponent<equipmentProperties>().boostRefuelRate;
 		fuelUseRate = thrusterEquipped.GetComponent<equipmentProperties>().fuelUseRate;
 		boostCoolingPoint = thrusterEquipped.GetComponent<equipmentProperties>().boostCoolingPoint;
 		maxBoostFuel = boostFuel;
-
+	
 		//armor
+		GameObject armor;
+		armor = Instantiate(armorEquipped, transform.position, Quaternion.identity) as GameObject;
+		armor.transform.parent = transform;
+		previouslyEquipped.Add(armor);
+
 		if (armorValue == maxArmorValue)
 		{
 			armorValue = armorEquipped.GetComponent<equipmentProperties>().armorValue;
@@ -319,7 +356,7 @@ public class playerController : MonoBehaviour
 		{
 			maxArmorValue = armorEquipped.GetComponent<equipmentProperties>().armorValue;
 		}
-
+	
 		//shield
 		if (shieldValue == maxShieldValue)
 		{
@@ -327,17 +364,18 @@ public class playerController : MonoBehaviour
 			maxShieldValue = armorEquipped.GetComponent<equipmentProperties>().shieldValue;
 			currentlyEquippedShield = Instantiate(shieldEquipped, transform.position, Quaternion.identity) as GameObject;
 			currentlyEquippedShield.transform.parent = transform;
+			previouslyEquipped.Add(currentlyEquippedShield);
+
 		}
 		else
 		{
 			maxShieldValue = armorEquipped.GetComponent<equipmentProperties>().shieldValue;
 			currentlyEquippedShield = Instantiate(shieldEquipped, transform.position, Quaternion.identity) as GameObject;
 			currentlyEquippedShield.transform.parent = transform;
+			previouslyEquipped.Add(currentlyEquippedShield);
 		}
 
 		currentlySelectedWeapon = weaponsInv;
-
-
 	}
 
 	void dealDamage(float damageValue)
