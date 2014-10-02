@@ -1,0 +1,173 @@
+Base path: /Applications/Unity/Unity.app/Contents
+Pipe name: \\.\pipe\UnityShaderCompiler-1--1587576408
+Cmd: getPlatforms
+Cmd: preprocess
+  insize=438 outsize=1184 ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=4279 outsize=919 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=4279 outsize=360 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=2255 outsize=817 kw=POINT ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=2255 outsize=536 kw=POINT ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=1783 outsize=457 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=1783 outsize=159 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=3996 outsize=905 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=3996 outsize=297 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
+Cmd: preprocess
+  error: 2 plat 12 at (123): Syntax error
+  error: 1 plat 12 at (146): Compiling shaders to OpenGL ES 2.0, Xbox 360, PS3, Flash or DX11 requires both vertex and fragment programs
+  error: 1 plat 12 at (380): Compiling shaders to OpenGL ES 2.0, Xbox 360, PS3, Flash or DX11 requires both vertex and fragment programs
+  insize=5711 outsize=4009 ok=0
+Cmd: preprocess
+  error: 1 plat 12 at (117): Compiling shaders to OpenGL ES 2.0, Xbox 360, PS3, Flash or DX11 requires both vertex and fragment programs
+  insize=2829 outsize=2177 ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=926 outsize=635 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=926 outsize=84 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=910 outsize=635 kw= ok=1
+Cmd: preprocess
+  error: 1 plat 12 at (1389): Compiling shaders to OpenGL ES 2.0, Xbox 360, PS3, Flash or DX11 requires both vertex and fragment programs
+  insize=2109 outsize=2946 ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=4876 outsize=919 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=4876 outsize=378 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=2852 outsize=817 kw=POINT ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=2852 outsize=561 kw=POINT ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=2380 outsize=457 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=2380 outsize=159 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=4593 outsize=905 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=4593 outsize=350 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=936 outsize=635 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=936 outsize=84 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=4877 outsize=919 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=4877 outsize=378 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=2852 outsize=817 kw=POINT ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=2852 outsize=561 kw=POINT ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=2381 outsize=457 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=2381 outsize=159 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=4594 outsize=905 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=4594 outsize=350 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=911 outsize=635 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=2852 outsize=560 kw=DIRECTIONAL ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=2852 outsize=380 kw=DIRECTIONAL ok=1
+Cmd: preprocess
+  insize=1617 outsize=994 ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=925 outsize=635 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=925 outsize=84 kw= ok=1
+Cmd: preprocess
+  error: 1 plat 12 at (117): Compiling shaders to OpenGL ES 2.0, Xbox 360, PS3, Flash or DX11 requires both vertex and fragment programs
+  insize=2829 outsize=2177 ok=1
+Cmd: preprocess
+  insize=435 outsize=1181 ok=1
+Cmd: preprocess
+  insize=938 outsize=1345 ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=4968 outsize=1509 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=4968 outsize=810 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=2628 outsize=1117 kw=POINT ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=2628 outsize=727 kw=POINT ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=2633 outsize=924 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=2633 outsize=466 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=4609 outsize=1406 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=4609 outsize=783 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=2628 outsize=828 kw=DIRECTIONAL ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=2628 outsize=524 kw=DIRECTIONAL ok=1
+Cmd: preprocess
+  insize=4487 outsize=855 ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=1172 outsize=658 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=1172 outsize=92 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=3063 outsize=865 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=3063 outsize=831 kw= ok=1
+Cmd: preprocess
+  error: 1 plat 12 at (117): Compiling shaders to OpenGL ES 2.0, Xbox 360, PS3, Flash or DX11 requires both vertex and fragment programs
+  insize=2829 outsize=2177 ok=1
+Cmd: preprocess
+  insize=447 outsize=447 ok=1
+Cmd: preprocess
+  insize=1048 outsize=887 ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=4871 outsize=919 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=4871 outsize=445 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=2847 outsize=817 kw=POINT ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=2847 outsize=666 kw=POINT ok=1
+Cmd: preprocess
+  insize=1576 outsize=991 ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=867 outsize=635 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=867 outsize=84 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=834 outsize=635 kw= ok=1
+Cmd: preprocess
+  insize=1500 outsize=667 ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=1135 outsize=547 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=1135 outsize=333 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=2847 outsize=560 kw=DIRECTIONAL ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=2847 outsize=428 kw=DIRECTIONAL ok=1
+Cmd: preprocess
+  error: 1 plat 12 at (117): Compiling shaders to OpenGL ES 2.0, Xbox 360, PS3, Flash or DX11 requires both vertex and fragment programs
+  insize=2819 outsize=2178 ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=916 outsize=584 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=916 outsize=84 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=900 outsize=584 kw= ok=1
+Cmd: preprocess
+  insize=1566 outsize=992 ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=857 outsize=584 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=857 outsize=84 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=824 outsize=584 kw= ok=1
