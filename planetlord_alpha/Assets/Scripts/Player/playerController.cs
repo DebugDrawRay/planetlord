@@ -137,12 +137,9 @@ public class playerController : MonoBehaviour
 			weaponSelect(1);
 		}*/
 
-		if (!subLightDrive)
+		if(Input.GetButton("FireWeapon"))
 		{
-			if(Input.GetButton("FireWeapon"))
-			{
-				fireWeapon();
-			}
+			fireWeapon();
 		}
 
 		if (Input.GetButtonDown("SwitchTarget"))

@@ -8,6 +8,8 @@ public class uiController : MonoBehaviour
 
 	public string sunTag;
 	public string playerTag;
+	public string planetTag;
+	public string warpTag;
 
 	public bool planetButtonActive;
 	public bool planetMenuActive;
@@ -15,16 +17,19 @@ public class uiController : MonoBehaviour
 	public GameObject planetToInteract;
 
 	public GameObject planetImage;
+	public GameObject warpImage;
 	public GameObject sunImage;
 	public GameObject miniMapContainer;
 	public string gameController;
 	public GameObject planetInteractionButton;
 	public GameObject planetInteractionMenu;
 	public List<GameObject> solarSystemObjects;
+	public GameObject warpGate;
 
 	void Start()
 	{
 		solarSystemObjects = GameObject.FindGameObjectWithTag(gameController).GetComponent<gameController>().solarSystemObjects;
+		warpGate = GameObject.FindGameObjectWithTag(gameController).GetComponent<gameController>().warpGateContainer;
 		miniMapGeneration();
 		isInteractingWithPlanet = false;
 	}
@@ -46,6 +51,7 @@ public class uiController : MonoBehaviour
 		{
 			generateMiniMapObjects(solarSystemObjects[i]);
 		}
+		generateMiniMapObjects(warpGate);
 	}
 
 	void generateMiniMapObjects(GameObject mapObject)
@@ -58,10 +64,18 @@ public class uiController : MonoBehaviour
 			miniMapObject.transform.localPosition = new Vector3 (mapObject.transform.position.x/miniMapRelDistance, mapObject.transform.position.z/miniMapRelDistance, 0);
 			miniMapObject.transform.localRotation = new Quaternion(0,0,0,1);
 		}
-		else
+		else if (mapObject.tag == planetTag) 
 		{
 			GameObject miniMapObject;
 			miniMapObject = Instantiate(planetImage, Vector3.zero, Quaternion.identity) as GameObject; 
+			miniMapObject.transform.parent = miniMapContainer.transform;
+			miniMapObject.transform.localPosition = new Vector3 (mapObject.transform.position.x/miniMapRelDistance, mapObject.transform.position.z/miniMapRelDistance, 0);
+			miniMapObject.transform.localRotation = new Quaternion(0,0,0,1);
+		}
+		else if(mapObject.tag == warpTag)
+		{
+			GameObject miniMapObject;
+			miniMapObject = Instantiate(warpImage, Vector3.zero, Quaternion.identity) as GameObject; 
 			miniMapObject.transform.parent = miniMapContainer.transform;
 			miniMapObject.transform.localPosition = new Vector3 (mapObject.transform.position.x/miniMapRelDistance, mapObject.transform.position.z/miniMapRelDistance, 0);
 			miniMapObject.transform.localRotation = new Quaternion(0,0,0,1);

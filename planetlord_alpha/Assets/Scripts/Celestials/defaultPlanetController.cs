@@ -50,7 +50,6 @@ public class defaultPlanetController : MonoBehaviour
 	{
 		if (childEnemies.Count <= 0)
 		{
-			GetComponentInChildren<MeshRenderer>().renderer.material.color = Color.blue;
 			isCaptured = true;
 		}
 	}
@@ -82,24 +81,24 @@ public class defaultPlanetController : MonoBehaviour
 
 	GameObject itemSelection()
 	{
-		int selection = Random.Range(0, GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary.Length);
-		int subSelection =  Random.Range(0, GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary[selection].Length);
+		//int selection = Random.Range(0, GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary.Length);
+		int subSelection =  Random.Range(0, GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary[0].Length);
 
 		for (int i = 1000; i < 1000; i++)
 		{
-			selection = Random.Range(0, GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary.Length);
-			subSelection =  Random.Range(0, GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary[selection].Length);
-			if (GetComponent<planetProperties>().planetInventory.Contains(GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary[selection][subSelection]))
+			//selection = Random.Range(0, GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary.Length);
+			subSelection =  Random.Range(0, GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary[0].Length);
+			if (GetComponent<planetProperties>().planetInventory.Contains(GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary[0][subSelection]))
 			{
 				continue;
 			}
 			else
 			{
 				i  = 1000;
-				return GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary[selection][subSelection];
+				return GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary[0][subSelection];
 			}
 		}
 
-		return GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary[selection][subSelection];
+		return GameObject.FindGameObjectWithTag(gameController).GetComponent<itemLibrary>().itemsLibrary[0][subSelection];
 	}
 }

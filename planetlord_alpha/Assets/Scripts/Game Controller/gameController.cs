@@ -8,6 +8,7 @@ public class gameController : MonoBehaviour
 	public GameObject playerShip;
 	public Vector3 playerSpawnPos;
 	public GameObject mainUI;
+	public GameObject warpGate;
 
 	//solar system variables
 
@@ -17,6 +18,8 @@ public class gameController : MonoBehaviour
 
 	public List<GameObject> solarSystemObjects;
 	public List<GameObject> trackableTargets;
+	public bool systemConquered;
+	public GameObject warpGateContainer;
 
 	public int maxPlanetsInSystem;
 	public int minPlanetsInSystem;
@@ -37,6 +40,7 @@ public class gameController : MonoBehaviour
 	void Awake()
 	{
 		toggleCursor(true);
+		systemConquered = false;
 
 		sunPos = Vector3.zero;
 
@@ -44,11 +48,21 @@ public class gameController : MonoBehaviour
 		spawnPlayer();
 	}
 
+	void Update()
+	{
+		checkIfConquered(); 
+	}
+
 	//set up cursor and player
 	void spawnPlayer()
 	{
 		Instantiate (mainUI);
-		Instantiate (playerShip, playerSpawnPos, Quaternion.identity);
+
+		GameObject player;
+		player = Instantiate (playerShip, playerSpawnPos, Quaternion.identity) as GameObject;
+
+		warpGateContainer = Instantiate (warpGate, player.transform.position, Quaternion.identity) as GameObject;
+
 	}
 
 	public void toggleCursor(bool active)
@@ -75,9 +89,8 @@ public class gameController : MonoBehaviour
 
 	void createSun()
 	{
-		GameObject sun;
-		sun = Instantiate (availableSuns[Random.Range(0, availableSuns.Length)], sunPos, Quaternion.identity) as GameObject;
-		solarSystemObjects.Add(sun);
+
+		Instantiate (availableSuns[Random.Range(0, availableSuns.Length)], sunPos, Quaternion.identity);
 		createPlanets();
 	}
 	
@@ -121,6 +134,24 @@ public class gameController : MonoBehaviour
 			}
 		}
 		return pos;
+	}
+
+	void checkIfConquered()
+	{
+		if (solarSystemObjects.Count > 0)
+		{
+			for (int i = 0; i <= solarSystemObjects.Count - 1; i++)
+			{
+				if (solarSystemObjects[i].GetComponent<planetProperties>().isCaptured)
+				{
+					solarSystemObjects.RemoveAt(i);
+				}
+			}
+		}
+		else
+		{
+			systemConquered = true;
+		}
 	}
 
 	public void pauseGame(bool isPaused)

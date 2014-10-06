@@ -12,17 +12,25 @@ Platform assembly: C:\Users\superintendent\Documents\planetlord\planetlord_alpha
 Loading C:\Users\superintendent\Documents\planetlord\planetlord_alpha\test_builds\planetlord_test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\superintendent\Documents\planetlord\planetlord_alpha\test_builds\planetlord_test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\superintendent\Documents\planetlord\planetlord_alpha\test_builds\planetlord_test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.039 seconds
+- Completed reload, in  0.033 seconds
 desktop: 1920x1080 60Hz; virtual: 3840x1208 at -1920,0
 <RI> Initializing input.
 <RI> Input initialized.
 Platform assembly: C:\Users\superintendent\Documents\planetlord\planetlord_alpha\test_builds\planetlord_test_Data\Managed\System.dll (this message is harmless)
 Platform assembly: C:\Users\superintendent\Documents\planetlord\planetlord_alpha\test_builds\planetlord_test_Data\Managed\System.Core.dll (this message is harmless)
-UnloadTime: 3.851184 ms
+UnloadTime: 3.339342 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 3116.
-Total: 1.304553 ms (FindLiveObjects: 0.160208 ms CreateObjectMapping: 0.026289 ms MarkObjects: 0.759288 ms  DeleteObjects: 0.025979 ms)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1965.
+Total: 0.905275 ms (FindLiveObjects: 0.067423 ms CreateObjectMapping: 0.018866 ms MarkObjects: 0.307119 ms  DeleteObjects: 0.011134 ms)
+
+player
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+player
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
 Actor::setLinearDamping: The linear damping must be nonnegative!
  
@@ -32,41 +40,55 @@ Actor::setLinearDamping: The linear damping must be nonnegative!
  
 (Filename: ..\..\Physics\src\NpActor.cpp Line: 207)
 
-Actor::setLinearDamping: The linear damping must be nonnegative!
+player
  
-(Filename: ..\..\Physics\src\NpActor.cpp Line: 207)
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Actor::setLinearDamping: The linear damping must be nonnegative!
+conqured
  
-(Filename: ..\..\Physics\src\NpActor.cpp Line: 207)
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Actor::setLinearDamping: The linear damping must be nonnegative!
+Level 'transitionLevel' (-1) couldn't be loaded because it has not been added to the build settings.
+To add a level to the build settings use the menu File->Build Settings...
  
-(Filename: ..\..\Physics\src\NpActor.cpp Line: 207)
+(Filename:  Line: 271)
 
-Actor::setLinearDamping: The linear damping must be nonnegative!
+player
  
-(Filename: ..\..\Physics\src\NpActor.cpp Line: 207)
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Actor::setLinearDamping: The linear damping must be nonnegative!
+conqured
  
-(Filename: ..\..\Physics\src\NpActor.cpp Line: 207)
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Actor::setLinearDamping: The linear damping must be nonnegative!
+Level 'transitionLevel' (-1) couldn't be loaded because it has not been added to the build settings.
+To add a level to the build settings use the menu File->Build Settings...
  
-(Filename: ..\..\Physics\src\NpActor.cpp Line: 207)
+(Filename:  Line: 271)
 
-Actor::setLinearDamping: The linear damping must be nonnegative!
+player
  
-(Filename: ..\..\Physics\src\NpActor.cpp Line: 207)
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-Actor::setLinearDamping: The linear damping must be nonnegative!
+conqured
  
-(Filename: ..\..\Physics\src\NpActor.cpp Line: 207)
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-UnloadTime: 7.240610 ms
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+Level 'transitionLevel' (-1) couldn't be loaded because it has not been added to the build settings.
+To add a level to the build settings use the menu File->Build Settings...
+ 
+(Filename:  Line: 271)
 
-Unloading 481 unused Assets to reduce memory usage. Loaded Objects now: 214.
-Total: 1.035477 ms (FindLiveObjects: 0.016701 ms CreateObjectMapping: 0.015464 ms MarkObjects: 0.112888 ms  DeleteObjects: 0.514645 ms)
+player
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+conqured
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Level 'transitionLevel' (-1) couldn't be loaded because it has not been added to the build settings.
+To add a level to the build settings use the menu File->Build Settings...
+ 
+(Filename:  Line: 271)
 

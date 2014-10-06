@@ -7,7 +7,7 @@ public class laserBeamController : MonoBehaviour
 	private float despawnTimer;
 	private GameObject equipmentOwner;
 
-	void Awake () 
+	void Start () 
 	{
 		maxBeamLength = GetComponent<equipmentProperties>().maxBeamLength;
 		despawnTimer = GetComponent<equipmentProperties>().despawnTimer;
